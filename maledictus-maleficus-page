@@ -1,0 +1,1390 @@
+<html>
+    <head>
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="https://static.tumblr.com/j0nrc4i/kiepgri15/tumblr_lkl6pehbyo1qfamg6.gif">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    </head>
+ 
+<!--- Coded with love by Krile. Please do not steal or take parts. If you have questions about my theme please message me and I will do my best to help! --->
+ 
+<!--- RIGHT CLICK DISABLING -->
+ 
+<script language=JavaScript>
+<!--
+ 
+//Disable right mouse click Script
+//By Maximus (maximus@nsimail.com) w/ mods by DynamicDrive
+//For full source code, visit http://www.dynamicdrive.com
+ 
+var message="no";
+ 
+///////////////////////////////////
+function clickIE4(){
+if (event.button==2){
+alert(message);
+return false;
+}
+}
+ 
+function clickNS4(e){
+if (document.layers||document.getElementById&&!document.all){
+if (e.which==2||e.which==3){
+alert(message);
+return false;
+}
+}
+}
+ 
+if (document.layers){
+document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown=clickNS4;
+}
+else if (document.all&&!document.getElementById){
+document.onmousedown=clickIE4;
+}
+ 
+document.oncontextmenu=new Function("alert(message);return false")
+</script>
+ 
+ 
+<!--- POPUP --->
+ 
+<script type="text/javascript"
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+//
+$('a.poplight[href^=#]').click(function() {
+var popID = $(this).attr('rel'); //Get Popup Name
+var popURL = $(this).attr('href'); //Get Popup href to define size
+var query= popURL.split('?');
+var dim= query[1].split('&');
+var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
+var popMargTop = ($('#' + popID).height() + 80) / 2;
+var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+$('#' + popID).css({
+'margin-top' : -popMargTop,
+'margin-left' : -popMargLeft
+});
+$('body').append('<div id="fade"></div>');
+$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+return false;
+});
+$('a.close, #fade').live('click', function() {
+$('#fade , .popup_block').fadeOut(function() {
+$('#fade, a.close').remove(); //fade them both out
+});
+return false;
+});
+});
+</script>
+ 
+<!--- POPUP TABS --->
+ 
+<script>
+$(document).ready(function(){
+   $("ul#tabs li").click(function(e){
+       if (!$(this).hasClass("active")) {
+           var tabNum = $(this).index();
+           var nthChild = tabNum+1;
+           $("ul#tabs li.active").removeClass("active");
+           $(this).addClass("active");
+           $("ul#tab li.active").removeClass("active");
+           $("ul#tab li:nth-child("+nthChild+")").addClass("active");
+       }
+   });
+});
+ 
+</script>
+ 
+<!--- TOOLTIPS --->
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+ 
+<script src="https://static.tumblr.com/uopakca/GVcnvdwbq/jquery.style-my-tooltips.js"></script>
+ 
+<script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:0,
+tip_fade_speed:0,
+attribute:"title"
+});
+});
+})(jQuery);
+</script>
+ 
+<!--- FONT -->
+ 
+<link href="https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC&display=swap" rel="stylesheet">
+ 
+<link href="https://fonts.googleapis.com/css?family=IM+Fell+English&display=swap" rel="stylesheet">
+ 
+<link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC&display=swap" rel="stylesheet">
+ 
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+ 
+<link href="https://fonts.googleapis.com/css?family=Alegreya+SC&display=swap" rel="stylesheet">
+ 
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+ 
+<!--- CREDIT FONT --->
+ 
+<link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+ 
+<style type="text/css">
+ 
+@font-face{ font-family: "sweetlybroken"; src: url('https://dl.dropboxusercontent.com/s/t2x5tlp92861uft/SWEETLY%20BROKEN.ttf'); }
+ 
+.popup_block {
+    display:none;
+    height:auto;
+    padding:20px;
+    background-color:#a6c1e2;
+    outline: 1px dashed #5276c2;
+    outline-offset: 2px;
+    border: 2px solid #3a5076;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    float: left;
+    position: fixed;
+    top: 53%;
+    left: 50%;
+    z-index: 99999;
+}
+ 
+*html #fade {position: fixed;}
+*html .popup_block {position: fixed;}
+#fade {
+    display:none;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    z-index:9999;
+    background:#b2c8e1; /* change to #fff for solid white */
+    opacity:0.5; /* change to opacity:1; */
+}
+ 
+#text {
+top:50%;
+left:50%;
+width:250px;
+height:auto;
+overflow-y:scroll;
+overflow-x:hidden;
+text-align:center;
+padding-right:15px;
+}
+ 
+#quote {
+font-size:30px;
+    letter-spacing:1px;
+    text-align:left;
+    margin-bottom:5px;
+    padding-top:10px;
+    padding-bottom:15px;
+    font-family: 'Dancing Script', cursive;
+    line-height:110%;
+    padding-left:15px;
+}
+ 
+#quote:first-letter {
+     font-size:53px;
+    color:#1f3f8e;
+    text-shadow:#8499f8 0px 0px 3px;
+    text-shadow:0px 0px 5px ;
+}
+ 
+#imageparagraph1 {
+    margin-left:150px;
+    height:233px;
+    text-align:left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-left:10px;
+    padding-right:5px;
+}
+ 
+#imageparagraph2 {
+    margin-right:150px;
+    height:233px;
+    text-align:right;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-left:5px;
+    padding-right:10px;
+}
+ 
+#limitbreak {
+    margin-right:150px;
+    height:560px;
+    text-align:right;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-left:5px;
+    padding-right:10px;
+}
+ 
+.metatitle {
+     font-size:20px;
+    margin-bottom:5px;
+    padding-bottom:3px;
+    margin:0px 0px 30px 55px;
+    font-family: 'IM Fell French Canon SC', serif;
+}
+ 
+.metatitle:first-letter {
+    text-transform:uppercase;
+    font-size:30px;
+    color:#52539e;
+}
+ 
+.metatitle a{
+color:#52659e;
+    text-shadow: transparent 0px 0px 3px;
+}
+ 
+.metatitle a:hover {
+    letter-spacing:2px;
+    text-shadow: transparent 0px 0px 4px;
+}
+ 
+.button {
+display:inline-block;
+text-align:center;
+width:90px;
+margin:4px;
+padding:4px;
+   background-image: url('https://66.media.tumblr.com/32760ecb93196e34af4303f004e9581d/c93491d06dbe580c-b5/s2048x3072/e92b61163935a451c6dbb490f87244d66d11f0ac.gif');
+color:#1f3f8e;
+text-shadow:#8499f8 0px 0px 3px;
+border : 3px double #7f91ac;
+font-family: 'IM Fell DW Pica SC', serif;
+}
+ 
+ul#tabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+}
+ 
+ul#tabs li {
+   display: inline-block;
+   background-image: url('https://66.media.tumblr.com/32760ecb93196e34af4303f004e9581d/c93491d06dbe580c-b5/s2048x3072/e92b61163935a451c6dbb490f87244d66d11f0ac.gif');
+   border : 3px double #7f91ac;
+   width:90px;
+margin:4px;
+padding:4px;
+   margin-bottom: 4px;
+   color:#565642;
+   text-shadow:#a8aa8a 0px 0px 3px;
+   cursor:pointer;
+   -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    font-family: 'IM Fell DW Pica SC', serif;
+}
+ul#tabs li:hover {
+   color:#4d58a0;
+}
+ul#tabs li.active {
+   color:#1f3f8e;
+    text-shadow: #8499f8 0px 0px 4px;
+}
+ul#tab {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+ul#tab li {
+   display: none;
+}
+ul#tab li.active {
+   display: block;
+}
+ 
+::selection {background: #1f6cd6;  color:#fff;}
+::-moz-selection {background: #1f6cd6;  color:#fff; }
+ 
+::-webkit-scrollbar {
+    height: 1px;
+    width: 5px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background:#5276c2;
+}
+ 
+#s-m-t-tooltip {
+font-family: 'Alegreya SC', serif;
+   padding:6px; /* space around the text */
+   margin-left:10px;
+    margin-top:-7px;
+   text-align: center;
+    text-shadow: 1px 0 0 #b2c8e1, -1px 0 0 #b2c8e1, 0 1px 0 #b2c8e1, 0 -1px 0 #b2c8e1, 1px 1px #b2c8e1, -1px -1px 0 #b2c8e1, 1px -1px 0 #b2c8e1, -1px 1px 0 #b2c8e1;
+   font-size:30px;
+   line-height:10px;
+   z-index:999999999;
+    position: absolute;
+}
+ 
+body {
+    background-color:#a7bad4;
+    font-size: 13.5px;
+    font-family: 'IM Fell English', serif;
+    color:#2f303f;
+    background-position: center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+ 
+body::-webkit-scrollbar {
+    display: none;  
+}
+ 
+#maingraphic {
+    position:relative;
+}
+ 
+#maingraphic img{
+    position:fixed;
+    left:50%;
+    top:50%;
+    margin-top:-350px;
+    margin-left:-75px;
+}
+ 
+small, sup, sub {
+    font-size:12px;
+}
+ 
+a {
+    text-decoration:none;
+    color:#565642;
+    text-shadow: #a8aa8a 0px 0px 4px;
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+}
+ 
+a:hover {
+    color:#4d58a0;
+}
+ 
+b, strong {
+    color:#1f3f8e;
+    text-shadow:#8499f8 0px 0px 3px;
+    font-size:15px;
+    font-family: 'IM Fell French Canon SC', serif;
+}
+ 
+i, em {
+    text-shadow:#868e9f 0px 0px 3px;
+    font-size:14px;
+    font-family: georgia;
+}
+ 
+blockquote {
+    padding:10px 8px 10px 20px;
+    margin:3px 0px 3px 8px;
+    border-left:3px solid #3a5076;
+    border-radius: 30px;
+}
+ 
+blockquote img {    
+    max-width:100%;
+    height:auto;
+}
+ 
+img {
+     max-width: 100%;
+}
+ 
+h1 {
+    color:#1f3f8e;
+    font-size:35px;
+    line-height:110%;
+    text-align:center;
+    padding:10px;
+    text-shadow:#8499f8 0px 0px 3px;
+    font-family: 'Playfair Display SC', serif;
+    font-weight:normal;
+}
+ 
+h2 {
+    color:#1f3f8e;
+    font-size:25px;
+    line-height:110%;
+    text-align:center;
+    padding:10px;
+    text-shadow:#8499f8 0px 0px 3px;
+    font-family: 'Playfair Display SC', serif;
+    font-weight:normal;
+}
+ 
+h3 {
+    font-family: 'Alegreya SC', serif;
+    font-weight:normal;
+    background-image: url('https://66.media.tumblr.com/6ffa64a7ffb6af694851174a9da0a7c0/c93491d06dbe580c-62/s2048x3072/ef18a221ce620870b3425b22567ab342fa93e72e.png');
+    background-size:cover;
+    color:#2f303f;
+    border-left:2px solid #5276c2;
+    border-right:2px solid #5276c2;
+    padding:5px;
+    height:36px;
+    font-size:32px;
+    font-style:normal;
+    text-align:right;
+    border-radius: 40px 0px 40px 0px;
+    -moz-border-radius: 40px 0px 40px 0px;
+    -webkit-border-radius: 40px 0px 40px 0px;
+    text-shadow: 1px 0 0 #b2c8e1, -1px 0 0 #b2c8e1, 0 1px 0 #b2c8e1, 0 -1px 0 #b2c8e1, 1px 1px #b2c8e1, -1px -1px 0 #b2c8e1, 1px -1px 0 #b2c8e1, -1px 1px 0 #b2c8e1;
+}
+ 
+h4 {
+    font-family: "sweetlybroken";
+    font-size:60px;
+    font-weight:normal;
+    margin-top:25px;
+    margin-bottom:0px;
+    background: linear-gradient(#bbcfeb, #647ebd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+ 
+h4:after {
+  background: none;
+  content: attr(data-text);
+  left: 118px;
+  top: 0px;
+  margin-top:25px;
+  margin-bottom:0px;
+  position: absolute;
+  text-shadow: 1px 0 0 #0d1634, -1px 0 0 #0d1634, 0 1px 0 #0d1634, 0 -1px 0 #0d1634, 1px 1px #0d1634, -1px -1px 0 #0d1634, 1px -1px 0 #0d1634, -1px 1px 0 #0d1634;
+  z-index: -1;
+}
+ 
+#subtitle {
+    font-family: 'IM Fell French Canon SC', serif;
+    color:#b3caf1;
+    font-size:20px;
+  text-shadow: 1px 0 0 #0d1634, -1px 0 0 #0d1634, 0 1px 0 #0d1634, 0 -1px 0 #0d1634, 1px 1px #0d1634, -1px -1px 0 #0d1634, 1px -1px 0 #0d1634, -1px 1px 0 #0d1634;
+    letter-spacing:2px;
+    margin-top:-15px;
+    margin-bottom:25px;
+}
+ 
+#container {
+   position:fixed;
+   width:450px;
+   height:605px;
+   overflow-y:scroll;
+   overflow-x:hidden;
+   left:50%;
+   margin-left:-535.5px;
+   top:50%;
+   margin-top:-295.5px;
+    text-align:center;
+    padding-right:15px;
+    padding-bottom:15px;
+    background-color:#a6c1e2;
+    border: solid 1px #485694;
+    padding-left:15px;
+}    
+ 
+#links {
+position:fixed;
+left:50%;
+top:50%;
+    line-height:20px;
+    margin-top:-50px;
+    margin-left:-50px;
+}
+ 
+#links a {
+        display:inline-block;
+text-align:center;
+    background:#a6c1e2;
+color:#1f3f8e;
+text-shadow:0px 0px 0px transparent;
+border-left: 3px double #3a5076;
+width:90px;
+margin:4px;
+padding:4px;
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    font-family: 'IM Fell DW Pica SC', serif;
+}
+ 
+#links a:hover {
+    color:#a6c1e2;
+    background:#1f3f8e;
+    text-shadow:transparent;
+    letter-spacing:2px;
+}
+ 
+#credit {
+    z-index:999999;
+    bottom:10px;
+    right:10px;
+    position:fixed;
+    font-family: 'Caveat', cursive;
+    font-size:40px;
+}
+ 
+</style>
+ 
+<body>
+ 
+ 
+ 
+ 
+<div id="maingraphic">
+    <img src="https://static.tumblr.com/j0nrc4i/l7nq8vh13/pagegraphic.png" draggable="false">
+</div>
+ 
+<div id="links">
+<!--- Edit links here. Don't forget to modify the links so they go to the appropriate page!---->
+<a href="/" title="Return.">Beginning.</a></br>
+<a href="/asks" title="Ask/Submit.">Inquire.</a></br>
+<a href="/rules" title="Rules.">Decree.</a></br>
+<a href="/verse" title="Verses.">Crossroads.</a></br>
+<a href="/nav" title="Navigation.">Memories.</a></br>
+<a href="/mun" title="Out of Character.">Mun.</a>
+</div>
+ 
+<div id="container">
+ 
+<h4 data-text="The Chosen.">The Chosen.</h4>
+<div id="subtitle">Gently cast aside your fake self. <br>
+</div>
+ 
+<ul id="tabs">
+<li class="active">The Knight.</li>
+<li>The Dragon.</li>
+<li>The Winter.</li>
+<li>Muse name.</li>
+<li>Muse name.</li>
+<li>Muse name.</li>
+<li>Muse name.</li>
+<li>Muse name.</li>
+</ul>
+<ul id="tab">
+<li class="active">
+ 
+<!---Muse 1 starts here---->
+ 
+<span style="float:left;"><img src="https://i.imgur.com/MzU7KOY.png"></span>
+<div id="imageparagraph1">
+<b>Name:</b> Arturia Pendragon. </br>
+<b>Alias:</b> King Arthur. </br>
+<b>Titles:</b> Once and Future King; King of Knights.</br>
+<b>Nationality:</b> British. </br>
+<b>Race:</b> Caucasian. </br>
+<b>Age:</b> Appears to be in late teens. </br>
+<b>Gender:</b> Genderfluid/Presents most often as female. </br>
+<b>Sexuality:</b> Bisexual. </br>
+<b>Relationship Status:</b> Single. </br>
+<b>Birth date:</b> July 7th. </br>
+<b>Occupation:</b> King; Knight. </p>
+ 
+</div>
+ 
+<h2>Appearance.</h2>
+ 
+<span style="float:right; padding-left:10px"><img src="https://i.imgur.com/2M8JWBu.png"></span>
+<div id="imageparagraph2">
+<b>Height:</b> 5'1'' </br>
+<b>Weight:</b> 92 lbs </br>
+<b>Hair color:</b> Blonde. </br>
+<b>Eye color:</b> Green. </br> </p>
+ 
+Arturia has the appearance of a young woman in her late teens with a slender physique, soft skin, and green eyes. She has "finely textured" blonde hair that seems "as if sprinkled with gold dust." Her face shows some signs of naivety and displays elegance. She is more muscular than many women, leading her to believe her body is unappealing. </p>
+ 
+She is actually older than her appearance would show, as her body did not age from the moment she pulled Caliburn from the stone to the time of her death.</p>
+ 
+</div>
+ 
+ 
+ 
+<div id="quote">“Of what worth is a king who fails to protect the powerless?”</div>
+ 
+Saber is a strong-willed young woman who usually speaks truthfully but is willing to lie if necessarily. She is courageous, determined, and set on carrying out her tasks. She constantly insists that she is a knight and king above all, and that her gender is of little importance to her and her role. However, this stance has softened due to her interactions with Shirou Emiya during the Fifth Holy Grail War. </p>
+ 
+She is resolute in following her own morals, regardless of the more viable, yet underhand, tactics being available. Saber prefers direct, fair confrontations based upon codes of chivalry.
+ 
+<h3>Abilities.</h3>
+ 
+<div align="left">
+ 
+<b>COMING SOON.</b></p>
+ 
+<h3>Headcanons.</h3>
+ 
+<div align="left">
+ 
+Arturia is slightly <b>canon divergent</b> and post Fate Stay/Night. She is still the same noble king. Her duties and obligations come first before anything else. However, after spending her time with Shirou and Rin she has come to the conclusion that she should no longer try to <i>actively avoid her own happiness.</i> If the opportunity appears for her to pursue some semblance of happiness, and if that does not conflict with her duties and obligations, she will not hesitate to pursue it. </p>
+ 
+Mostly important, she no longer wishes to change the past. She only appears to fight for the sake of humanity, or for a noble cause.</p>
+ 
+</div>
+ 
+<h2>Important Metas.</h2>
+<center>
+ 
+<a href="/" class="button">Headcanon.</a>
+<a href="/" class="button">Headcanon.</a>
+<a href="/" class="button">Headcanon.</a>
+ 
+</center>
+ 
+<h3>History.</h3>
+ 
+<div align="left">
+ 
+<b>COMING SOON.</b></p>
+ 
+</div>
+ 
+</li>
+<li>
+ 
+<!---Muse 2 starts here---->
+ 
+<span style="float:left;"><img src="https://i.imgur.com/AN4Jc3Q.jpg"></span>
+<div id="imageparagraph1">
+<b>Name: </b>Tenzin Tou</br>
+<b>Alias: </b>Reaper </br>
+<b>Titles: </b>Boss; The Dragon of Hong Kong </br>
+<b>Nationality: </b>China</br>
+<b>Race: </b>Asian </br>
+<b>Age: </b>45-61 (Appears much younger) </br>
+<b>Gender: </b>Male </br>
+<b>Sexuality: </b>Asexual. </br>
+<b>Relationship Status:</b>Widowed </br>
+<b>Birth date:</b>June 23rd </br>
+<b>Occupation:</b>Mob Boss/Assassin </p>
+ 
+<b>Family:</b> <br>
+Lleyan Tou - Wife (Deceased)<br>
+Miya Tou - Daughter
+ 
+</p>
+ 
+</div>
+ 
+<h2>Appearance.</h2>
+ 
+<span style="float:right; padding-left:10px"><img src="https://i.imgur.com/5Lgjart.jpg"></span>
+<div id="imageparagraph2">
+<b>Height: </b>5'9 </br>
+<b>Weight: </b>165lbs </br>
+<b>Hair color: </b>Black </br>
+<b>Eye color: </b>Icy blue </br>
+<b>Complexion: </b>Fair </p>
+ 
+With midnight black hair, a fair complexion, and striking blue eyes, Tenzin Tou's features give him the appearance of a handomse young man in his twenties. He has the toned physique of an athlete, though due to his old age he's a bit on the thinner side of the spectrum. 
+ 
+</div>
+ 
+ 
+<div id="quote"><center>"They say lightning never strikes in the same place twice... I beg to differ. "</center>
+</div>
+ 
+Often cold and unfeeling, and an icy expressions that never change, the Dragon's cruelty has struck fear in the hearts of allies and enemies alkike. Rumored to be a sadistic tyrant who rules with a blood clad hand, Tenzin remains at the top of a throne none dare to topple.
+ 
+The truth is that these acts of cruely remain nothing more than dull <i>chores</i> that he must carry out. It is simply the logical deterrence to any unwanted enemies; the most efficient way to carry out his objectives. But rarely does he enjoy it. He is not a man beyond mercy. All the same it is wise to beware. A sadistic streak does on occasion breach the surface. 
+ 
+The only time he appears to show a softer side is when he is around his only child.
+ 
+<h3>Abilities.</h3>
+ 
+<div align="left">
+ 
+<b>Mystic Eyes of Saṃsāra:</b> Similar to that of clairvoyance, Tenzin is able to perceive the strings of fate that bind humans to their destiny. By following these threads, he is able to perceive the truth. And should he wish, he is able to force the early "completion" of an event in their future (such an injury, a disease, healing.) Tenzin primarily uses this ability to force "death" upon his target by following their thread of fate all the way to its end. However, it can also be used for other purposes.  </p>
+ 
+<b>Lleyan's Blessing:</b> The secret to Tenzin's apparent youth lie in the blessings of the <b>sun</b> he received from his deceased wife before her passing. This blessing gifted him with, among other things, a stronger life force. As a result he heals from injuries and recovers from diseases far more quickly than what should be possible. This regeneration and boost in vitality has also slowed his aging, resulting in an extended life span. He is uncertain as to how long he will be able to live.</p>
+ 
+<B>Mana Manipulation:</B> Tenzin is a master at manipulating mana, both external and internal. This is useful not only for spellcasting, but with physical contact he is also able to alter or disrupt the flow of mana inside of someone else. </p>
+ 
+<B>Gun and Blade Proficiency:</B> Tenzin is proficient with both blades and guns, having trained with the both of them since a young age.</p>
+<B>Enhanced Speed:</B> By manipulating the mana around him, drawing it inwards and then releasing it in bursts, Tenzin is able to travel at high speeds with little issue. 
+ 
+<h3>Headcanons.</h3>
+ 
+<div align="left">
+ 
+COMING SOON.
+ 
+</div>
+ 
+<h2>Important Metas.</h2>
+<center>
+ 
+<a href="/" class="button">Headcanon.</a>
+<a href="/" class="button">Headcanon.</a>
+<a href="/" class="button">Headcanon.</a>
+ 
+</center>
+ 
+<h3>History.</h3>
+ 
+<div align="left">
+ 
+COMING SOON.</p>
+ 
+</div>
+ 
+</li>
+<li>
+ 
+<!---Muse 3 starts here---->
+ 
+<span style="float:left;"><img src="https://i.imgur.com/Q1co56J.png"></span>
+<div id="imageparagraph1">
+<b>Name: </b> Winter. </br>
+<b>Alias: </b>Ayden Lucius Wynknight. </br>
+<b>Titles: </b> Lord of Winter; Duke Wynknight; Prince; Silver Lion of the North; Sovereign of Eternal Frost.</br>
+<b>Race:  </b> Spirit, often presents as human; Primarily Feline in nature.</b></br>
+<b>Age:  </b> Primordial </br>
+<b>Gender:  </b> Male Presenting (Not strictly binary)</br>
+<b>Sexuality:  </b>Bisexual</br>
+<b>Relationship Status:  </b>Single </br>
+<b>Birth date:  </b>December 21 </br>
+<b>Occupation:  </b>Spirit Lord. </br>
+<b>VA:  </b>Miyano Mamoru</p>
+ 
+ 
+<b>Family:</b> Miya Tо̄ (sister); Lleyan Tо̄ (mother); Unknown Father (spirit); Tenzin Tо̄ (father-in-law); Spirit King (maternal grandfather). 
+</b> </p>
+ 
+</div>
+ 
+<h2>Appearance.</h2>
+ 
+<span style="float:right; padding-left:10px"><img src="https://i.imgur.com/pix1GAC.png"></span>
+<div id="imageparagraph2">
+ 
+<b>Height:  </b> 5'11 </br>
+<b>Weight:  </b>175lbs</br>
+<b>Hair color:  </b>Blonde to Platinum (depending on season)</br>
+<b>Eye color:  </b>Cyan </br>
+<b>Complexion:  </b>Medium to Fair (depending on season)  </p>
+ 
+The incarnation of Winter truly embodies his season in all possible ways. This includes, but of course, his <i>impossible</i> beauty. This becomes more pronounced the closer one is in chronology to his season. </p>
+ 
+Sunny blonde locks fade to platinum silver; cool cyan eyes freeze into ice. His most pronounced feature, the <i>eyes.</i> So inhuman. So <b>beautifully</b> frigid. Look too long and you might find yourself begging to drown in them. He's more than happy to comply. 
+ 
+</div>
+ 
+<h2>Personality.</h2>
+ 
+<div id="quote">“Now now ... you couldn’t have honestly expected any other outcome, could you?”</div>
+ 
+<b>GENERAL VERSE.</b> <br>
+COMING SOON. </p>
+ 
+ 
+<b>TOPAXI</b> <br><br>
+ 
+THE NOBLE,  Ayden Lucius Wynknight, Duke of Topaxi, and contender for the throne. Despite his youthful looks, he just turned 32 this past winter. With golden hair, delicate skin, and icy blue eyes, you might wonder just where those dazzling looks came from? <br><br>
+             From the outset he appears like a charming and kind young man; seldom arrogant and always humble in front of those who earn his respect. Despite his royal lineage he gives little weight to status or other “useless” symbols of power. He appreciates those who are competent and hard-working, regardless of their status. This, coupled with his “bright” and charming personality have earned him a large following among Topaxi’s citizens. <br><br>
+              However, it would not be wise to underestimate him because of his appearance. You may be surprised by the RUTHLESSNESS he is capable of. What sort of things has he ORDERED in the background? And what sort of things has he done himself? <br><br>
+ 
+          Note: While he is primarily Topaxi! Exclusive while the plot is ongoing, he is now avaliable for more general verse interaction.
+ 
+<h3>Abilities.</h3>
+ 
+<div align="left">
+ 
+<a href="https://maledictus-maleficus.tumblr.com/post/649487661224132608/aydens-stats-sheet-magical-ability-user-type">Topaxi Summary</a></p>
+ 
+<b>Domain of Winter:</b> Ice Manipulation; Storm Manipulation; Wind; Snow; Shapeshifting; Temperature Manipulation.</p>
+ 
+Winter's abilities are by and far determined by his season's associations. If you associate it with Winter, it's within his domain, and he therefore can control it (to various degrees of skill). </p>
+ 
+<b>Domain of Night:</b> Nightmares; Dreams; Sleep; Comfort; Fear; Moonlight. </p>
+ 
+While he does not have full control over this domain, he is still a great spirit under the Aspect of Night. Therefore, he can control all things within it to a lesser extent. Primarily, he uses this abiliity to lull humans and animals into a restful sleep, free of nightmares (if he so chooses). Unfortunately, often times they do not wake up. </p>
+ 
+<b>Animal Transformation:</b> As a spirit with no concrete form, he is able to change it at will. Normally, this is either the form of a feline (particularly a lion), or a human. He is not however limited to these forms and can largely change into whatever he wishes.</p>
+ 
+Some forms do take a considerable amount of effort to maintain. While changing into a feline or human takes little to no effort on his part, the likes a <i>rodent</i> would be incredibly difficult and uncomfortable for him. </p>
+ 
+Note: No matter what form he takes, he will always maintain certain features. His hair/fur will always maintain the same color depending on season, and his eyes will never change.</p>
+ 
+<b>Animal/Nature Communication:</b> As an extension of the Will of the Planet,  Ayden is able to communicate with animals and other beings in nature with no difficulty. 
+<h3>Headcanons.</h3>
+ 
+<div align="left">
+ 
+COMING SOON
+ 
+</div>
+ 
+<h2>Important Tags.</h2>
+<center>
+ 
+<a href="https://maledictus-maleficus.tumblr.com/post/658738630036176896/eraba-reta-unmei-spirits-and-fae-are-similar-in" class="button">About the Spirits</a>
+<a href="https://maledictus-maleficus.tumblr.com/tagged/%3Bdecember%27s-wintery-breath-is-already-clouding-the-pond.-frosting-the-pane.-obscuring-summer%27s-memory...-%7C-isms-%E2%98%BE" class="button">Isms</a>
+<a href="https://maledictus-maleficus.tumblr.com/tagged/%3Beveryone-is-a-moon.-everyone-has-a-dark-side-they-never-show-to-anybody-%7C-about%C2%A0%E2%98%BE" class="button">About.</a>
+ 
+</center>
+ 
+<h3>History.</h3>
+ 
+<div align="left">
+ 
+COMING SOON.</p>
+ 
+***Note: The spirits referenced on this blog are of my own creation. Information can be found <a href="https://eraba-reta-unmei.tumblr.com/tagged/%3Babout%20the%20spirits">here</a> and <a href="https://maledictus-maleficus.tumblr.com/tagged/%3Babout%20the%20spirits">here</a>.
+ 
+</div>
+ 
+</li>
+<li>
+ 
+<!---Muse 4 starts here---->
+ 
+<span style="float:left;"><img src="https://static.tumblr.com/j0nrc4i/ZDwq8xmr4/profileholder.png"></span>
+<div id="imageparagraph1">
+<b>Name:</b> </br>
+<b>Alias:</b> </br>
+<b>Titles:</b> </br>
+<b>Nationality:</b> </br>
+<b>Race:</b> </br>
+<b>Age:</b> </br>
+<b>Gender:</b> </br>
+<b>Sexuality:</b> </br>
+<b>Relationship Status:</b> </br>
+<b>Birth date:</b> </br>
+<b>Occupation:</b> </p>
+ 
+ 
+<b>Family:</b> </p>
+ 
+</div>
+ 
+<h2>Appearance.</h2>
+ 
+<span style="float:right; padding-left:10px"><img src="https://static.tumblr.com/j0nrc4i/ZDwq8xmr4/profileholder.png"></span>
+<div id="imageparagraph2">
+<b>Height:</b> </br>
+<b>Weight:</b> </br>
+<b>Hair color:</b> </br>
+<b>Eye color:</b> </br>
+<b>Complexion:</b> </p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+</div>
+ 
+<h2>Personality.</h2>
+ 
+<span style="float:left"><img src="https://static.tumblr.com/j0nrc4i/ZDwq8xmr4/profileholder.png"></span>
+<div id="imageparagraph1">
+<b>Positive:</b> </br>
+<b>Negative:</b> </br>
+<b>Likes:</b> </br>
+<b>Dislikes:</b> </br>
+<b>Alignment:</b> </br>
+<b>Myers-Briggs:</b> </br>
+<b>Temperament:</b> </br>
+<b>Dark Triad:</b> </br>
+<b>Enneagram:</b> </p>
+</div></p>
+ 
+<div id="quote">Insert Quote here.</div>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.
+ 
+<h3>Abilities.</h3>
+ 
+<div align="left">
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+<h3>Headcanons.</h3>
+ 
+<div align="left">
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+</div>
+ 
+<h2>Important Metas.</h2>
+<center>
+ 
+<a href="/" class="button">Headcanon.</a>
+<a href="/" class="button">Headcanon.</a>
+<a href="/" class="button">Headcanon.</a>
+ 
+</center>
+ 
+<h3>History.</h3>
+ 
+<div align="left">
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+</div>
+ 
+</li>
+<li>
+ 
+<!---Muse 5 starts here---->
+ 
+<span style="float:left;"><img src="https://static.tumblr.com/j0nrc4i/ZDwq8xmr4/profileholder.png"></span>
+<div id="imageparagraph1">
+<b>Name:</b> </br>
+<b>Alias:</b> </br>
+<b>Titles:</b> </br>
+<b>Nationality:</b> </br>
+<b>Race:</b> </br>
+<b>Age:</b> </br>
+<b>Gender:</b> </br>
+<b>Sexuality:</b> </br>
+<b>Relationship Status:</b> </br>
+<b>Birth date:</b> </br>
+<b>Occupation:</b> </p>
+ 
+ 
+<b>Family:</b> </p>
+ 
+</div>
+ 
+<h2>Appearance.</h2>
+ 
+<span style="float:right; padding-left:10px"><img src="https://static.tumblr.com/j0nrc4i/ZDwq8xmr4/profileholder.png"></span>
+<div id="imageparagraph2">
+<b>Height:</b> </br>
+<b>Weight:</b> </br>
+<b>Hair color:</b> </br>
+<b>Eye color:</b> </br>
+<b>Complexion:</b> </p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+</div>
+ 
+<h2>Personality.</h2>
+ 
+<span style="float:left"><img src="https://static.tumblr.com/j0nrc4i/ZDwq8xmr4/profileholder.png"></span>
+<div id="imageparagraph1">
+<b>Positive:</b> </br>
+<b>Negative:</b> </br>
+<b>Likes:</b> </br>
+<b>Dislikes:</b> </br>
+<b>Alignment:</b> </br>
+<b>Myers-Briggs:</b> </br>
+<b>Temperament:</b> </br>
+<b>Dark Triad:</b> </br>
+<b>Enneagram:</b> </p>
+</div></p>
+ 
+<div id="quote">Insert Quote here.</div>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.
+ 
+<h3>Abilities.</h3>
+ 
+<div align="left">
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+<h3>Headcanons.</h3>
+ 
+<div align="left">
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+</div>
+ 
+<h2>Important Metas.</h2>
+<center>
+ 
+<a href="/" class="button">Headcanon.</a>
+<a href="/" class="button">Headcanon.</a>
+<a href="/" class="button">Headcanon.</a>
+ 
+</center>
+ 
+<h3>History.</h3>
+ 
+<div align="left">
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+</div>
+ 
+</li>
+<li>
+ 
+<!---Muse 6 starts here---->
+ 
+<span style="float:left;"><img src="https://static.tumblr.com/j0nrc4i/ZDwq8xmr4/profileholder.png"></span>
+<div id="imageparagraph1">
+<b>Name:</b> </br>
+<b>Alias:</b> </br>
+<b>Titles:</b> </br>
+<b>Nationality:</b> </br>
+<b>Race:</b> </br>
+<b>Age:</b> </br>
+<b>Gender:</b> </br>
+<b>Sexuality:</b> </br>
+<b>Relationship Status:</b> </br>
+<b>Birth date:</b> </br>
+<b>Occupation:</b> </p>
+ 
+ 
+<b>Family:</b> </p>
+ 
+</div>
+ 
+<h2>Appearance.</h2>
+ 
+<span style="float:right; padding-left:10px"><img src="https://static.tumblr.com/j0nrc4i/ZDwq8xmr4/profileholder.png"></span>
+<div id="imageparagraph2">
+<b>Height:</b> </br>
+<b>Weight:</b> </br>
+<b>Hair color:</b> </br>
+<b>Eye color:</b> </br>
+<b>Complexion:</b> </p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+</div>
+ 
+<h2>Personality.</h2>
+ 
+<span style="float:left"><img src="https://static.tumblr.com/j0nrc4i/ZDwq8xmr4/profileholder.png"></span>
+<div id="imageparagraph1">
+<b>Positive:</b> </br>
+<b>Negative:</b> </br>
+<b>Likes:</b> </br>
+<b>Dislikes:</b> </br>
+<b>Alignment:</b> </br>
+<b>Myers-Briggs:</b> </br>
+<b>Temperament:</b> </br>
+<b>Dark Triad:</b> </br>
+<b>Enneagram:</b> </p>
+</div></p>
+ 
+<div id="quote">Insert Quote here.</div>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.
+ 
+<h3>Abilities.</h3>
+ 
+<div align="left">
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+<h3>Headcanons.</h3>
+ 
+<div align="left">
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+</div>
+ 
+<h2>Important Metas.</h2>
+<center>
+ 
+<a href="/" class="button">Headcanon.</a>
+<a href="/" class="button">Headcanon.</a>
+<a href="/" class="button">Headcanon.</a>
+ 
+</center>
+ 
+<h3>History.</h3>
+ 
+<div align="left">
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+</div>
+ 
+</li>
+<li>
+ 
+<!---Muse 7 starts here---->
+ 
+<span style="float:left;"><img src="https://static.tumblr.com/j0nrc4i/ZDwq8xmr4/profileholder.png"></span>
+<div id="imageparagraph1">
+<b>Name:</b> </br>
+<b>Alias:</b> </br>
+<b>Titles:</b> </br>
+<b>Nationality:</b> </br>
+<b>Race:</b> </br>
+<b>Age:</b> </br>
+<b>Gender:</b> </br>
+<b>Sexuality:</b> </br>
+<b>Relationship Status:</b> </br>
+<b>Birth date:</b> </br>
+<b>Occupation:</b> </p>
+ 
+ 
+<b>Family:</b> </p>
+ 
+</div>
+ 
+<h2>Appearance.</h2>
+ 
+<span style="float:right; padding-left:10px"><img src="https://static.tumblr.com/j0nrc4i/ZDwq8xmr4/profileholder.png"></span>
+<div id="imageparagraph2">
+<b>Height:</b> </br>
+<b>Weight:</b> </br>
+<b>Hair color:</b> </br>
+<b>Eye color:</b> </br>
+<b>Complexion:</b> </p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+</div>
+ 
+<h2>Personality.</h2>
+ 
+<span style="float:left"><img src="https://static.tumblr.com/j0nrc4i/ZDwq8xmr4/profileholder.png"></span>
+<div id="imageparagraph1">
+<b>Positive:</b> </br>
+<b>Negative:</b> </br>
+<b>Likes:</b> </br>
+<b>Dislikes:</b> </br>
+<b>Alignment:</b> </br>
+<b>Myers-Briggs:</b> </br>
+<b>Temperament:</b> </br>
+<b>Dark Triad:</b> </br>
+<b>Enneagram:</b> </p>
+</div></p>
+ 
+<div id="quote">Insert Quote here.</div>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.
+ 
+<h3>Abilities.</h3>
+ 
+<div align="left">
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+<h3>Headcanons.</h3>
+ 
+<div align="left">
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+</div>
+ 
+<h2>Important Metas.</h2>
+<center>
+ 
+<a href="/" class="button">Headcanon.</a>
+<a href="/" class="button">Headcanon.</a>
+<a href="/" class="button">Headcanon.</a>
+ 
+</center>
+ 
+<h3>History.</h3>
+ 
+<div align="left">
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+</div>
+ 
+</li>
+<li>
+ 
+<!---Muse 8 starts here---->
+ 
+<span style="float:left;"><img src="https://static.tumblr.com/j0nrc4i/ZDwq8xmr4/profileholder.png"></span>
+<div id="imageparagraph1">
+<b>Name:</b> </br>
+<b>Alias:</b> </br>
+<b>Titles:</b> </br>
+<b>Nationality:</b> </br>
+<b>Race:</b> </br>
+<b>Age:</b> </br>
+<b>Gender:</b> </br>
+<b>Sexuality:</b> </br>
+<b>Relationship Status:</b> </br>
+<b>Birth date:</b> </br>
+<b>Occupation:</b> </p>
+ 
+ 
+<b>Family:</b> </p>
+ 
+</div>
+ 
+<h2>Appearance.</h2>
+ 
+<span style="float:right; padding-left:10px"><img src="https://static.tumblr.com/j0nrc4i/ZDwq8xmr4/profileholder.png"></span>
+<div id="imageparagraph2">
+<b>Height:</b> </br>
+<b>Weight:</b> </br>
+<b>Hair color:</b> </br>
+<b>Eye color:</b> </br>
+<b>Complexion:</b> </p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+</div>
+ 
+<h2>Personality.</h2>
+ 
+<span style="float:left"><img src="https://static.tumblr.com/j0nrc4i/ZDwq8xmr4/profileholder.png"></span>
+<div id="imageparagraph1">
+<b>Positive:</b> </br>
+<b>Negative:</b> </br>
+<b>Likes:</b> </br>
+<b>Dislikes:</b> </br>
+<b>Alignment:</b> </br>
+<b>Myers-Briggs:</b> </br>
+<b>Temperament:</b> </br>
+<b>Dark Triad:</b> </br>
+<b>Enneagram:</b> </p>
+</div></p>
+ 
+<div id="quote">Insert Quote here.</div>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.
+ 
+<h3>Abilities.</h3>
+ 
+<div align="left">
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+<h3>Headcanons.</h3>
+ 
+<div align="left">
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+</div>
+ 
+<h2>Important Metas.</h2>
+<center>
+ 
+<a href="/" class="button">Headcanon.</a>
+<a href="/" class="button">Headcanon.</a>
+<a href="/" class="button">Headcanon.</a>
+ 
+</center>
+ 
+<h3>History.</h3>
+ 
+<div align="left">
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet mattis enim, eget blandit elit. Duis diam nulla, accumsan efficitur placerat nec, imperdiet at dui. In laoreet enim ut magna ullamcorper cursus. Nulla facilisi. Phasellus mollis lacinia massa, in auctor ipsum venenatis vitae. Proin nec orci faucibus, vestibulum quam ultrices, pharetra massa.</p>
+ 
+</div>
+ 
+</li>
+ 
+</div>
+ 
+<div id="credit"><a href="#?w=250" rel="cr" class="poplight" title="Storyteller Codeweaving">oAo</a></div>
+ 
+</body>
+ 
+<div id="cr" class="popup_block">
+<div id="text">
+ 
+Theme code <i>&</i> graphics by <b>Storyteller Creations</b>. If you are interested in ordering a theme from me, please visit my commissions blog <b><a href="https://storytellercreations.tumblr.com">storytellercreations</a></b>. Thank you for your interest and hope to see you soon as a client<i>!</i></p>
+ 
+Artworks used is from<b>Type-Moon</b></p>
+ 
+This theme is authorized only for <b>Everi</b>'s use. <i>Please do not steal or directly copy the code for yourself</i>.
+</div></div></div></div></div></div></div></div></div></div>
+</div></div></div></div></div></div></div></div></div></div>
+ 
+</html>
