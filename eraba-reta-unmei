@@ -1,0 +1,1650 @@
+<html>
+    <head>
+   
+<script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+<script language="Javascript">
+function preloadFunc()
+{
+var ip = userip;
+var bannedips=[
+  "98.199.103.221",
+   "36.85.43.192",
+]
+var handleips=bannedips.join("|")
+handleips=new RegExp(handleips, "i")
+ 
+if (ip.search(handleips)!=-1){
+window.location.replace("https://www.wikihow.com/Love-Yourself");
+document.write('<!--');
+}
+}
+window.onpaint = preloadFunc();
+</script>
+ 
+<!--- Coded with love by Scheherazade. Please do not steal or take parts. If you have questions about my theme please message me and I will do my best to help! --->
+ 
+ 
+ 
+ 
+<!--- POPUP --->
+       
+<script type="text/javascript"
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+//
+$('a.poplight[href^=#]').click(function() {
+var popID = $(this).attr('rel'); //Get Popup Name
+var popURL = $(this).attr('href'); //Get Popup href to define size
+var query= popURL.split('?');
+var dim= query[1].split('&');
+var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
+var popMargTop = ($('#' + popID).height() + 80) / 2;
+var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+$('#' + popID).css({
+'margin-top' : -popMargTop,
+'margin-left' : -popMargLeft
+});
+$('body').append('<div id="fade"></div>');
+$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+return false;
+});
+$('a.close, #fade').live('click', function() {
+$('#fade , .popup_block').fadeOut(function() {
+$('#fade, a.close').remove(); //fade them both out
+});
+return false;
+});
+});
+</script>
+ 
+<!--- POPUP TABS --->
+ 
+<script>
+$(document).ready(function(){
+   $("ul#tabs li").click(function(e){
+       if (!$(this).hasClass("active")) {
+           var tabNum = $(this).index();
+           var nthChild = tabNum+1;
+           $("ul#tabs li.active").removeClass("active");
+           $(this).addClass("active");
+           $("ul#tab li.active").removeClass("active");
+           $("ul#tab li:nth-child("+nthChild+")").addClass("active");
+       }
+   });
+});
+ 
+</script>
+ 
+<!--- DROPDOWN --->
+   
+    <script type="text/javascript" src="https://static.tumblr.com/3ikgvxs/0TGl4zgpu/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$(".links_body").hide();
+$(".links_head").click(function(){
+$(this).next(".links_body").slideToggle('fast');
+}); }); </script>
+<style type="text/css">
+.links_list { margin:0px; padding:0px; width:100%;}
+.links_head { padding-top:5px; padding-bottom:5px; cursor:pointer; position:relative; margin:1px; text-align:center;}
+.links_body { padding:10px; text-align:left; display:none;}
+</style>
+ 
+<!--- TOOLTIPS --->
+   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+ 
+<script src="https://static.tumblr.com/uopakca/GVcnvdwbq/jquery.style-my-tooltips.js"></script>
+ 
+<script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:0,
+tip_fade_speed:0,
+attribute:"title"
+});
+});
+})(jQuery);
+</script>
+ 
+<!--- CREDIT FONT --->
+ 
+<link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+ 
+<!--- FONTS --->
+ 
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+ 
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+ 
+<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+ 
+<link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet">
+ 
+<link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet">
+ 
+<link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
+ 
+<link href="https://fonts.googleapis.com/css?family=Alice" rel="stylesheet">
+ 
+<meta name="image:background image" content="https://static.tumblr.com/186d613bc1814a3426626b44371ab893/j0nrc4i/24op4usqk/tumblr_static_2bje8y20v0pwc8o0co8k0ccwk.png"/>
+<meta name="image:popup image" content="https://static.tumblr.com/dc83f6141840c940bbbc743782451f82/j0nrc4i/GNEp4uszj/tumblr_static_enxytq618p444cc0s4g4oskww.png"/>
+<meta name="image:tooltips background" content="https://static.tumblr.com/40a4973140c9ccba4caf1d2f60802d36/j0nrc4i/g1yp4uxak/tumblr_static_7fpp57us9mkgocgsoc4s8og44.gif"/>
+<meta name="image:tags h3 ask background" content="https://static.tumblr.com/69c0681141e16eb1a90c5c11a546efa1/j0nrc4i/55Rp4uu26/tumblr_static_ep6sdr6w2vk88k4cwkogk0sgs.png"/>
+ 
+<meta name="color:background" content="#e5d6d1"/>
+<meta name="color:popup bg" content="#f9f1e8"/>
+<meta name="color:sidebar" content="#f9f0e7"/>
+<meta name="color:text" content="#906a74"/>
+<meta name="color:bold" content="#b43965"/>
+<meta name="color:bold border" content="#fecee7"/>
+<meta name="color:italics border" content="#fecee7"/>
+<meta name="color:links" content="#e6659f"/>
+<meta name="color:links border" content="#f99acc"/>
+<meta name="color:links hover" content="#e57561"/>
+<meta name="color:blockquote" content="#dc9dbb"/>
+<meta name="color:border" content="#dc9d9b"/>
+<meta name="color:refresh" content="#ebb4ad"/>
+<meta name="color:refresh border" content="#714252"/>
+<meta name="color:permalinks" content="#ed9a56"/>
+<meta name="color:navigation links" content="#ebb4ad"/>
+<meta name="color:navigation links border" content="#714252"/>
+ 
+<meta name="text:sect 1 title" content="The Flower."/>
+<meta name="text:sidebar sect 1" content="We <i>dream</i> to give ourselves <b>hope</b>.</br> To stop dreaming--<br>
+<i>well</i>, that's like saying you can<br>
+never change your <b>FATE</b>."/>
+<meta name="text:sect 2 title" content="Blooming through."/>
+<meta name="text:sidebar sect 2" content="Semi-Selective</p>
+ 
+Multifandom <i>&</i> Multiverse <b>Original Character.</b></p>
+ 
+<b>Please read rules</b><i>&</i> <b>pages before interacting.</b>"/>
+<meta name="text:sect 3 title" content="Destiny."/>
+<meta name="text:sidebar sect 3" content="Thread Tracker."/>
+ 
+<meta name="text:refresh title" content="Eraba-reta-unmei"/>
+<meta name="text:refresh size" content="30px"/>
+<meta name="text:refresh horizontal" content="1070px"/>
+<meta name="text:refresh vertical" content="385px"/>
+<meta name="text:refresh tooltip" content="Oh land and heavens, oh sun and moon, be at peace."/>
+ 
+<meta name="text:ask symbol" content="✿"/>
+<meta name="text:ask size" content="35px"/>
+<meta name="text:ask title" content="Inquire. / Ask."/>
+<meta name="text:ask horizontal" content="460px"/>
+<meta name="text:ask vertical" content="30px"/>
+ 
+<meta name="text:rules symbol" content="❀"/>
+<meta name="text:rules size" content="75px"/>
+<meta name="text:rules title" content="Promises. / Rules."/>
+<meta name="text:rules horizontal" content="440px"/>
+<meta name="text:rules vertical" content="100px"/>
+ 
+<meta name="text:about symbol" content="✿"/>
+<meta name="text:about size" content="95px"/>
+<meta name="text:about title" content="The Blossom. / About."/>
+<meta name="text:about horizontal" content="340px"/>
+<meta name="text:about vertical" content="175px"/>
+ 
+<meta name="text:verses symbol" content="❀"/>
+<meta name="text:verses size" content="55px"/>
+<meta name="text:verses title" content="Fates. / Verses."/>
+<meta name="text:verses horizontal" content="355px"/>
+<meta name="text:verses vertical" content="95px"/>
+ 
+<meta name="text:navigation symbol" content="✿"/>
+<meta name="text:navigation size" content="40px"/>
+<meta name="text:navigation title" content="Treasures. / Navigation."/>
+<meta name="text:navigation horizontal" content="290px"/>
+<meta name="text:navigation vertical" content="150px"/>
+ 
+<meta name="text:mun symbol" content="❀"/>
+<meta name="text:mun size" content="25px"/>
+<meta name="text:mun title" content="The Writer. / Mun."/>
+<meta name="text:mun horizontal" content="325px"/>
+<meta name="text:mun vertical" content="50px"/>
+ 
+<meta name="text:connection symbol" content="✿"/>
+<meta name="text:connection size" content="25px"/>
+<meta name="text:connection title" content="Red String of Fate. / Connections."/>
+<meta name="text:connection horizontal" content="280px"/>
+<meta name="text:connection vertical" content="75px"/>
+   
+<style type="text/css">
+ 
+@font-face{font-family:"Mf Young and Beautiful";src:url('https://static.tumblr.com/it5srtk/6Sgorvvpn/mf_young___beautiful.ttf');}
+ 
+@keyframes spin {
+ 0% { transform: rotate(360deg); }
+ 100% { transform: rotate(0deg); }
+}
+@-webkit-keyframes spin {
+ 0% {-webkit-transform: rotate(360deg); }
+ 100% { -webkit-transform: rotate(0deg); }
+}
+@-ms-keyframes spin {
+ 0% {-ms-transform: rotate(360deg); }
+ 100% { -ms-transform: rotate(0deg); }
+}
+@-moz-keyframes spin {
+ 0% { -moz-transform: rotate(360deg); }
+ 100% { -moz-transform: rotate(0deg); }
+}
+@-o-keyframes spin {
+ 0% { -o-transform: rotate(360deg); }
+ 100% { -o-transform: rotate(0deg); }
+}
+ 
+ 
+.popup_block{
+    display:none;
+    background-image:url('{image:popup image}');
+    text-align:center;
+    padding:23px;
+    height:702px;
+    position:fixed;
+    top:390px;
+    left:500px;
+    overflow-y:hidden;
+    overflow-x:hidden;
+    z-index: 99999;
+}
+ 
+*html #fade {position: fixed;}
+*html .popup_block {position: fixed;}
+#fade {
+    display:none;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    z-index:9999;
+    background:{color:popup bg}; /* change to #fff for solid white */
+    opacity:1; /* change to opacity:1; */
+}
+ 
+#text {
+top:50%;
+left:50%;
+margin-top:56px;
+margin-left:349.5px;
+width:450px;
+height:650px;
+overflow-y:scroll;
+overflow-x:hidden;
+text-align:center;
+padding-right:15px;
+}
+ 
+.links_list {
+margin: 0px;
+padding:2.5px;
+width: 425px;
+margin-top: 1px;
+margin-left:6px;
+}
+ 
+.links_head {
+cursor: pointer;
+position: relative;
+margin: 1px;
+text-align: right;
+font-size:20px;
+text-shadow: 1px 0 0 {color:background}, -1px 0 0 {color:background}, 0 1px 0 {color:background}, 0 -1px 0 {color:background}, 1px 1px {color:background}, -1px -1px 0 {color:background}, 1px -1px 0 {color:background}, -1px 1px 0 {color:background};
+letter-spacing:2px;
+background-image: url('{image:tags h3 ask background}');
+background-size:cover;
+    border-left:2px solid {color:border};
+    border-right:2px solid {color:border};
+border-radius: 0px 40px 0px 40px;
+    -moz-border-radius: 0px 40px 0px 40px;
+    -webkit-border-radius: 0px 40px 0px 40px;
+outline: 0px solid #d9d9d8;
+ padding:5px;
+ height:15px;
+ font-family: 'Galada', cursive;
+}
+ 
+.links_body {
+height: auto;
+overflow: scroll;
+padding: 10px;
+display: none;
+text-align: justify;
+letter-spacing: 1px;
+line-height: 100%;
+text-align:center;
+}
+ 
+.button {
+display:inline-block;
+text-align:center;
+width:90px;
+margin:4px;
+padding:4px;
+background-image: url('{image:tooltips background}');
+color:{color:bold};
+    text-shadow: 1px 0 0 {color:sidebar}, -1px 0 0 {color:sidebar}, 0 1px 0 {color:sidebar}, 0 -1px 0 {color:sidebar}, 1px 1px {color:sidebar}, -1px -1px 0 {color:sidebar}, 1px -1px 0 {color:sidebar}, -1px 1px 0 {color:sidebar};
+border : 2px double {color:border};
+text-transform: uppercase;
+font-family: 'Alice', serif;
+font-size:13px;
+}
+ 
+ul#tabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+}
+ul#tabs li {
+   display: inline-block;
+   text-transform: uppercase;
+   background-image: url('{image:tooltips background}');
+   border : 2px double {color:border};
+   width:90px;
+margin:4px;
+padding:4px;
+   margin-bottom: 4px;
+   color:{color:bold};
+       text-shadow: 1px 0 0 {color:sidebar}, -1px 0 0 {color:sidebar}, 0 1px 0 {color:sidebar}, 0 -1px 0 {color:sidebar}, 1px 1px {color:sidebar}, -1px -1px 0 {color:sidebar}, 1px -1px 0 {color:sidebar}, -1px 1px 0 {color:sidebar};
+   cursor:pointer;
+   -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    font-family: 'Alice', serif;
+    font-size:13px;
+}
+ul#tabs li:hover {
+   color:{color:links hover};
+}
+ul#tabs li.active {
+   color:{color:links};
+}
+ul#tab {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+ul#tab li {
+   display: none;
+}
+ul#tab li.active {
+   display: block;
+}
+ 
+::selection {background: #f5b79f;  color:#fff;}
+::-moz-selection {background: #f5b79f;  color:#fff; }
+ 
+::-webkit-scrollbar {
+    height: 1px;
+    width: 2px;
+}
+           
+::-webkit-scrollbar-thumb {
+    background:{color:border};
+}
+ 
+#s-m-t-tooltip {
+   font-family: 'Niconne', cursive;
+   padding:6px; /* space around the text */
+   margin-left:10px;
+    margin-top:-7px;
+   text-align: center;
+           text-shadow: 1px 0 0 {color:sidebar}, -1px 0 0 {color:sidebar}, 0 1px 0 {color:sidebar}, 0 -1px 0 {color:sidebar}, 1px 1px {color:sidebar}, -1px -1px 0 {color:sidebar}, 1px -1px 0 {color:sidebar}, -1px 1px 0 {color:sidebar};
+   font-size:35px;
+   line-height:10px;
+   z-index:999999999;
+    position: absolute;
+    color:{color:bold};
+}
+ 
+body {
+    background-color:{color:background};
+    font-size: 13px;
+    font-family: calibri;
+    color:{color:text};
+    background-image:url('{image:background image}');
+    background-position: top left;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+ 
+small, sup, sub {
+    font-size:12px;
+}
+ 
+a {
+    text-decoration:none;
+    color:{color:links};
+    text-shadow: {color:links border} 0px 0px 4px;
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+}
+ 
+a:hover {
+    color:{color:links hover};
+}
+ 
+b, strong {
+    color:{color:bold};
+    text-shadow:{color:bold border} 0px 0px 3px;
+    font-size:16px;
+    font-family: 'Lobster', cursive;
+    font-weight:normal;
+}
+ 
+i, em {
+    color:{color:text};
+    text-shadow:{color:italics border} 0px 0px 3px;
+    font-size:16px;
+    font-family: 'Kaushan Script', cursive;
+}
+ 
+blockquote {
+    padding:2px 8px;
+    margin:3px 0px 3px 8px;
+    border-left:1px solid {color:blockquote};
+    border-radius: 10px;
+}
+   
+blockquote img {    
+    max-width:100%;
+    height:auto;
+}
+ 
+img {
+     max-width: 100%;
+}
+ 
+h1 {
+    color:{color:bold};
+    font-size:35px;
+    line-height:110%;
+    text-align:center
+    padding:10px;
+    text-shadow:0px 0px 4px {color:bold border};
+    font-family: 'Niconne', cursive;
+    font-weight:normal;
+}
+ 
+h2 {
+    color:{color:bold};
+    font-size:25px;
+    line-height:110%;
+    text-align:center;
+    padding:10px;
+    text-shadow:0px 0px 4px {color:bold border};
+    font-family: 'Niconne', cursive;
+    font-weight:normal;
+}
+ 
+h3 {
+    background-image: url('{image:tags h3 ask background}');
+    background-size:cover;
+    color:{color:text};
+    border-left:2px solid {color:border};
+    border-right:2px solid {color:border};
+    padding:5px;
+    height:30px;
+    font-size:30px;
+    font-style:normal;
+    text-align:right;
+    border-radius: 40px 0px 40px 0px;
+    -moz-border-radius: 40px 0px 40px 0px;
+    -webkit-border-radius: 40px 0px 40px 0px;
+    text-shadow: 1px 0 0 {color:background}, -1px 0 0 {color:background}, 0 1px 0 {color:background}, 0 -1px 0 {color:background}, 1px 1px {color:background}, -1px -1px 0 {color:background}, 1px -1px 0 {color:background}, -1px 1px 0 {color:background};
+    font-family: 'Galada', cursive;
+    font-weight:normal;
+}
+ 
+#container {
+    position:fixed;
+    top:0px;
+    left:547.5px;
+    height:100%;
+    width:483px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+     -webkit-mask-image: -webkit-gradient(linear, center 60%, center bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}  
+ 
+.posts {
+    width:450px;
+    padding:10px;
+    margin-bottom:10px;
+}
+ 
+.permalinks {
+    padding:5px;
+    height:12px;
+}
+ 
+.permalinks a {
+    text-decoration:none;
+    font-size: 9px;
+    color:{color:permalinks};
+}
+ 
+.permalinks a:hover {
+    color:{color:links hover};
+}
+   
+.tags {
+    height:auto;
+    width:auto;
+    padding:15px;
+    text-align:center;
+    margin-left:50px;
+    border-top:5px double {color:border};
+    border-bottom:2.5px dotted {color:border};
+    border-radius: 0px 20px 0px 20px;
+    -moz-border-radius: 0px 20px 0px 20px;
+    -webkit-border-radius: 0px 20px 0px 20px;
+    background-image:url('{image:tags h3 ask background}');
+    background-repeat:none;
+    background-size:cover;
+}
+ 
+.tags a {
+    text-decoration:none;
+    font-size: 12px;
+        text-shadow: 1px 0 0 {color:sidebar}, -1px 0 0 {color:sidebar}, 0 1px 0 {color:sidebar}, 0 -1px 0 {color:sidebar}, 1px 1px {color:sidebar}, -1px -1px 0 {color:sidebar}, 1px -1px 0 {color:sidebar}, -1px 1px 0 {color:sidebar};
+    font-family: 'VT323', monospace;
+}
+ 
+#refresh {
+    position:fixed;
+    left:{text:refresh horizontal};
+    top:{text:refresh vertical};
+    font-size:{text:refresh size};
+    padding:10px;
+    font-family:"Mf Young and Beautiful";
+}
+ 
+#refresh a {
+    color:{color:refresh};
+    text-shadow: 1px 0 0 {color:refresh border}, -1px 0 0 {color:refresh border}, 0 1px 0 {color:refresh border}, 0 -1px 0 {color:refresh border}, 1px 1px {color:refresh border}, -1px -1px 0 {color:refresh border}, 1px -1px 0 {color:refresh border}, -1px 1px 0 {color:refresh border};
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+}
+ 
+#refresh a:hover {
+    color:{color:links hover};
+}
+ 
+#links {
+    position:fixed;
+    line-height:20px;
+}
+ 
+#links a {
+    color:{color:navigation links};
+    text-shadow: 1px 0 0 {color:navigation links border}, -1px 0 0 {color:navigation links border}, 0 1px 0 {color:navigation links border}, 0 -1px 0 {color:navigation links border}, 1px 1px {color:navigation links border}, -1px -1px 0 {color:navigation links border}, 1px -1px 0 {color:navigation links border}, -1px 1px 0 {color:navigation links border};
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+}
+ 
+#links a:hover {
+    -webkit-filter:blur(4px);
+    color:{color:links hover};
+}
+ 
+#link1 {
+    position:fixed;
+    font-size:{text:ask size};
+    margin-left:{text:ask horizontal};
+    margin-top:{text:ask vertical};
+    -webkit-animation: spin 7s linear 0s infinite normal;
+ -moz-animation: spin 7s linear 0s infinite normal;
+ -ms-animation: spin 7s linear 0s infinite normal;
+ -o-animation: spin 7s linear 0s infinite normal;
+ animation: spin 7s linear 0s infinite normal;
+ 
+}
+ 
+#link2 {
+    position:fixed;
+    font-size:{text:rules size};
+    margin-left:{text:rules horizontal};
+    margin-top:{text:rules vertical};
+    -webkit-animation: spin 7s linear 0s infinite normal;
+ -moz-animation: spin 7s linear 0s infinite normal;
+ -ms-animation: spin 7s linear 0s infinite normal;
+ -o-animation: spin 7s linear 0s infinite normal;
+ animation: spin 7s linear 0s infinite normal;
+}
+ 
+#link3 {
+    position:fixed;
+    font-size:{text:about size};
+    margin-left:{text:about horizontal};
+    margin-top:{text:about vertical};
+    -webkit-animation: spin 7s linear 0s infinite normal;
+ -moz-animation: spin 7s linear 0s infinite normal;
+ -ms-animation: spin 7s linear 0s infinite normal;
+ -o-animation: spin 7s linear 0s infinite normal;
+ animation: spin 7s linear 0s infinite normal;
+}
+ 
+#link4 {
+    position:fixed;
+    font-size:{text:verses size};
+    margin-left:{text:verses horizontal};
+    margin-top:{text:verses vertical};
+    -webkit-animation: spin 7s linear 0s infinite normal;
+ -moz-animation: spin 7s linear 0s infinite normal;
+ -ms-animation: spin 7s linear 0s infinite normal;
+ -o-animation: spin 7s linear 0s infinite normal;
+ animation: spin 7s linear 0s infinite normal;
+}
+ 
+#link5 {
+    position:fixed;
+    font-size:{text:navigation size};
+    margin-left:{text:navigation horizontal};
+    margin-top:{text:navigation vertical};
+    -webkit-animation: spin 7s linear 0s infinite normal;
+ -moz-animation: spin 7s linear 0s infinite normal;
+ -ms-animation: spin 7s linear 0s infinite normal;
+ -o-animation: spin 7s linear 0s infinite normal;
+ animation: spin 7s linear 0s infinite normal;
+}
+ 
+#link6 {
+    position:fixed;
+    font-size:{text:mun size};
+    margin-left:{text:mun horizontal};
+    margin-top:{text:mun vertical};
+    -webkit-animation: spin 7s linear 0s infinite normal;
+ -moz-animation: spin 7s linear 0s infinite normal;
+ -ms-animation: spin 7s linear 0s infinite normal;
+ -o-animation: spin 7s linear 0s infinite normal;
+ animation: spin 7s linear 0s infinite normal;
+}
+ 
+#link7 {
+    position:fixed;
+    font-size:{text:connection size};
+    margin-left:{text:connection horizontal};
+    margin-top:{text:connection vertical};
+    -webkit-animation: spin 7s linear 0s infinite normal;
+ -moz-animation: spin 7s linear 0s infinite normal;
+ -ms-animation: spin 7s linear 0s infinite normal;
+ -o-animation: spin 7s linear 0s infinite normal;
+ animation: spin 7s linear 0s infinite normal;
+ 
+}
+ 
+#pagination {
+    position:fixed;
+    bottom:30px;
+    left:850px;
+}
+ 
+.asker {
+    font-size:40px;
+    margin:0px 0px 0px 0px;
+    font-family: 'Galada', cursive;
+}
+ 
+.asker a{
+    font-size:40px;
+    margin:0px 0px 0px 0px;
+    font-family: 'Galada', cursive;
+}
+ 
+.question {
+    width:auto;
+    height:auto;
+    margin-top:10px;
+    padding:15px 25px;
+    border-top:5px double {color:border};
+    border-bottom:2px solid {color:border};
+    border-radius: 20px 0px 20px 0px;
+    -moz-border-radius: 20px 0px 20px 0px;
+    -webkit-border-radius: 20px 0px 20px 0px;
+    background-image:url('{image:tags h3 ask background}');
+    background-repeat:none;
+    background-size:cover;
+    text-shadow: 1px 0 0 {color:sidebar}, -1px 0 0 {color:sidebar}, 0 1px 0 {color:sidebar}, 0 -1px 0 {color:sidebar}, 1px 1px {color:sidebar}, -1px -1px 0 {color:sidebar}, 1px -1px 0 {color:sidebar}, -1px 1px 0 {color:sidebar};
+}
+ 
+.quote {
+    font-size:23px;
+    letter-spacing:1px;
+    text-align:center;
+    margin-bottom:5px;
+    padding-bottom:3px;
+    font-family: 'Waiting for the Sunrise', cursive;
+}
+ 
+.quote:first-letter {
+    font-size:32px;
+    color:{color:bold};
+    text-shadow:{color:bold border} 0px 0px 3px;
+    font-family: 'Waiting for the Sunrise', cursive;
+    text-shadow:0px 0px 5px ;
+}
+ 
+.quotesource {
+    text-align:right;
+    margin-bottom:5px;
+}
+ 
+.notes {
+    color:{color:text};
+    font-style:normal;
+    letter-spacing:0px;
+    text-align:left;
+    line-height:100%;
+    margin-left:-15px;}
+   
+.notes li {
+    list-style-type:none;
+    padding:10px 25px 10px 25px;
+    text-align:left;
+    -moz-transition-duration:0.5s;
+    -webkit-transition-duration:0.5s;
+    -o-transition-duration:0.5s;}
+   
+.notes img.avatar {
+    margin-right: 10px;
+    border-radius: 15px
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+ 
+#sidedesc {
+  font-size:12px; /*– font size. change numbers if you want it bigger or smaller or remove this line if you want it to match with the entire blog’s font size –*/
+  background:{color:sidebar}; /*– the color of your sidebar’s background. –*/
+border-top:5px double {color:border};
+    border-bottom:2.5px dotted {color:border};
+    border-radius:10px;
+  height:auto;
+  width:160px;
+  margin-left:1055px;
+  margin-top:25px;
+  outline-offset:2px;
+  padding:15px;
+  text-align:center;
+  line-height:100%;
+   position:fixed;
+    opacity:0.5;
+  transition: opacity .7s ease-in-out;
+   -moz-transition: opacity .7s ease-in-out;
+   -webkit-transition: opacity .7s ease-in-out;
+   overflow-y:hidden;
+    overflow-x:hidden;
+}
+ 
+#sidedesc:hover {
+   opacity:1;
+   transition: opacity .7s ease-in-out;
+   -moz-transition: opacity .7s ease-in-out;
+   -webkit-transition: opacity .7s ease-in-out;}
+ 
+#sideheader {
+  font-size:13px;
+  color:{color:bold};
+  text-align:center;
+  text-transform: uppercase;
+   background-image: url('{image:tooltips background}');
+      text-shadow: 1px 0 0 {color:sidebar}, -1px 0 0 {color:sidebar}, 0 1px 0 {color:sidebar}, 0 -1px 0 {color:sidebar}, 1px 1px {color:sidebar}, -1px -1px 0 {color:sidebar}, 1px -1px 0 {color:sidebar}, -1px 1px 0 {color:sidebar};
+  border-top:2px double {color:blockquote};
+   border-bottom:2px double {color:blockquote};
+  background-repeat:repeat;
+  background-attachment:fixed;
+  padding-top:3px;
+  padding-bottom:3px;
+  font-family: 'Alice', serif;
+}
+ 
+#credit {
+    z-index:999999;
+    bottom:10px;
+    right:10px;
+    position:fixed;
+    font-family: 'Caveat', cursive;
+    font-size:40px;
+}
+ 
+</style>
+   
+<body>
+ 
+<div id="sidedesc">
+<div id="sideheader">{text:sect 1 title}</div>
+</p>
+{text:sidebar sect 1}</p>
+ 
+<div id="sideheader">{text:sect 2 title}</div>
+</p>
+{text:sidebar sect 2}</p>
+<div id="sideheader">{text:sect 3 title}</div>
+</p><a href="https://www.rpthreadtracker.com/public/ever12/blossoming-threads" title="
+{text:sidebar sect 3}"><b>| Thread Tracker |</b></a></p>
+ 
+{block:Pagination}
+<b>{block:PreviousPage}<a href="{PreviousPage}">⊰</a>{/block:PreviousPage}</b> —  <b>{block:NextPage}<a href="{NextPage}">⊱</a>{/block:NextPage}</b>
+{/block:Pagination}
+ 
+</div></div>
+ 
+<div id="refresh"><a href="/" title="{text:refresh tooltip}">{text:refresh title}</a></div>
+ 
+<div id="links">
+<div id="link1"><a href="#?w=804" rel="01" class="poplight" title="{text:ask title}">{text:ask symbol}</a></div>
+<div id="link2"><a href="#?w=804" rel="02" class="poplight" title="{text:rules title}">{text:rules symbol}</a></div>
+<div id="link3"><a href="#?w=804" rel="03" class="poplight" title="{text:about title}">{text:about symbol}</a></div>
+<div id="link4"><a href="#?w=804" rel="04" class="poplight" title="{text:verses title}">{text:verses symbol}</a></div>
+<div id="link5"><a href="#?w=804" rel="05" class="poplight" title="{text:navigation title}">{text:navigation symbol}</a></div>
+<div id="link6"><a href="#?w=804" rel="06" class="poplight" title="{text:mun title}">{text:mun symbol}</a></div>
+<div id="link7"><a href="#?w=804" rel="07" class="poplight" title="{text:connection title}">{text:connection symbol}</a></div>
+</div>    
+   
+</div>
+ 
+<div id="container">  
+ 
+{block:Posts}
+ 
+<div class="posts">
+ 
+{block:Text}{block:Title}<h1><center>{Title}</center></h1>{/block:Title}{Body}{/block:Text}
+ 
+{block:Photo}<center><img src="{PhotoURL-400}" alt="{PhotoAlt}"/></center>{block:Caption}{Caption}{/block:Caption}{/block:Photo}
+ 
+{block:Panorama}{LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}{block:Caption}{Caption}{/block:Caption}{/block:Panorama}
+ 
+{block:Photoset}<center>{Photoset}</center>{block:Caption}{Caption}{/block:Caption}{/block:Photoset}
+ 
+{block:Quote}<div class="quote">{Quote}</div>{block:Source}<div class="quotesource">—{Source}</div>{/block:Source}{/block:Quote}
+ 
+{block:Link}<a href="{URL}" class="link" {Target}>{Name}</a>{block:Description}{Description}{/block:Description}{/block:Link}
+ 
+{block:Chat}{block:Title}{Title}</a>{/block:Title}
+{block:Lines}<li>{block:Label}<b>{Label}</b>{/block:Label} {Line}</li>{/block:Lines}{/block:Chat}
+                       
+{block:Video}{Video-400}{block:Caption}{Caption}{/block:Caption}{/block:Video}
+ 
+{block:Audio}{AudioEmbed}{block:Caption}{Caption}{/block:Caption}{/block:Audio}
+ 
+{block:Answer}
+<div id="askheader"><div class="asker">{Asker}</div><span style="font-size:25px;margin-left:50px;margin-bottom:50px;letter-spacing:2px; font-family: 'Waiting for the Sunrise', cursive; line-height: 10%;">Whispers....</span>
+<div class="question">{Question}</div></div>
+{Answer}
+{/block:Answer}
+ 
+<div class="permalinks">
+ 
+<a href="{ReblogURL}" title="Scatter" style="font-size:30px; position: absolute; margin-left:-2px; margin-top:0px; -webkit-transform: rotate(-25deg); -ms-transform: rotate(-25deg); transform: rotate(-25deg)">✿</a>
+ 
+<a href="{Permalink}" title="{DayofMonth}{DayofMonthSuffix} {Month} {Year}" style="font-size:25px; position: absolute; margin-left:22px; margin-top:19px; -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg)">❀</a>
+ 
+{block:Date}<a href="{Permalink}" title="{12Hour}:{Minutes} {CapitalAmPm}" style="font-size:20px; position: absolute; margin-left:15px; margin-top:40px; -webkit-transform: rotate(-25deg); -ms-transform: rotate(-25deg); transform: rotate(-25deg)">✿</a>{/block:Date}
+ 
+{block:NoteCount}<a href="{Permalink}" title="{NoteCountWithLabel}" style="font-size:26px; position: absolute; margin-left:-10px; margin-top:25px; -webkit-transform: rotate(25deg); -ms-transform: rotate(25deg); transform: rotate(25deg)">❀</a>
+{/block:NoteCount}
+ 
+</div>
+ 
+<div class="tags">{block:HasTags}{block:Tags}✿ <a href="{TagUrl}"> {Tag}</a>{/block:Tags}{/block:HasTags}</div>
+ 
+</div>
+ 
+{block:PostNotes}
+<div class="notes">
+    {PostNotes-16}
+</div>
+{/block:PostNotes}
+ 
+{/block:Posts}
+ 
+</div>
+ 
+{block:ContentSource}
+<!-- {SourceURL}{block:SourceLogo}<img src="{BlackLogoURL}"
+width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+{/block:ContentSource}
+</div>
+ 
+<div id="credit"><a href="#?w=804" rel="cr" class="poplight" title="Storyteller Codeweaving">oAo</a></div>
+ 
+</body>
+ 
+<div id="01" class="popup_block">
+<div id="text">
+ 
+<img src="https://static.tumblr.com/j0nrc4i/kM1p4uxvq/ask.png" draggable="false"></p>
+ 
+<iframe frameborder="0" height="235" id="ask_form"
+scrolling="no" src="https://www.tumblr.com/ask_form/eraba-reta-unmei.tumblr.com"
+width="100%"></iframe>
+<br><br>
+<iframe frameborder="0" height="150" id="submit_form"
+scrolling="no" src="https://www.tumblr.com/submit_form/eraba-reta-unmei.tumblr.com"
+width="100%"></iframe>
+<!--[if IE]><script type="text/javascript">document.getElementById('ask_form').
+allowTransparency=true;</script>
+<![endif]-->
+ 
+</div>
+</div></div></div></div></div></div></div></div></div></div>
+ 
+<div id="02" class="popup_block">
+<div id="text">
+ 
+<img src="https://static.tumblr.com/j0nrc4i/p84p4uxt0/rules.png" draggable="false"></p>
+ 
+<h2>Pages.</h2>
+ 
+<b>✿</b> <b>Please</b> read my pages before asking me any questions. If you can’t access them for any reason, just let me know. There’s a lot of valuable information, such as what verse’s I currently have and vital information on my muse.</p>
+ 
+<h2>Following & Selectivity.</h2>
+ 
+<b>✿</b> This blog is Semi-Selective. Meaning–I will follow most people back. The only time I will not follow back is if I do not forsee us interacting. </p>
+ 
+<b>✿</b> I will likely not respond to character on character interaction if we are not mutuals.</p>
+ 
+<h2>To Personal Blogs.</h2>
+ 
+<b>✿</b> Unfortunately, I do not follow most personal blogs back, except maybe for close friends. It’s just to keep my dashboard tidy, and it’s nothing against you personally. You’re still welcome to message me and send asks, regardless.
+ 
+<h2>Content.</h2>
+ 
+<b>✿</b> This blog is likely to have triggering content & darker themes. Most things will be tagged appropriately, but if that is not your cup of tea, <b>please do not follow me</b>. It is my blog, and I can rp what I wish.</p>
+ 
+ 
+<h2>Icons & Graphics.</h2>
+ 
+<b>✿</b> <b>DO NOT</b> steal any icons or graphics from this page<i>!</i> If they aren’t made by me, they are made by friends or other people. If you wish to use anything, please ask me first.</br>
+Icon borders courtesy of <b><a href="https://vestigeofcalamity.tumblr.com/">vestigeofcalamity</a></b>.</p>
+ 
+<a name="sect5"><h2>Replies and Asks.</h2></a><p>
+ 
+<b>✿</b> Reminding me about replies is fine, but please try not to pester me<i>!</i> I’m a law student, so I may not always have the time or muse to reply right away. </p>
+ 
+<b>✿</b> On this note–rp activity will be sporadic throughout the work week. While I may lurk and reblog things, maybe even reply to one liners, actual rping will be very sporadic. I’m not ignoring our threads, I promise. During the weekend I will answer all asks and reply to threads.</p>
+ 
+<b>✿</b> Reply length. There’s no need to match my reply length, but I do require my partners to put in similar effort. If I write multiple paragraphs and I receive a one liner in return, it seems like they don’t care enough. </p>
+ 
+<b>✿</b> if you’ve lost muse for a thread and wish to drop it, just message me. I won’t bite your head off. In the same respect, I will message you if I no longer wish to continue a thread. </p>
+ 
+<h2>Multiple Threads.</h2>
+ 
+<b>✿</b> Even if we have an ongoing thread, don’t hesitate to send in more asks or tag me in starters. We’ll either finish 5000 threads, drop them all, or do whatever we want. </p>
+ 
+<b>✿</b> i.e. I welcome multiple threads, let’s do the thing.</p>
+ 
+<h2>Thread List.</h2>
+ 
+<b>✿</b> I have a list of all ongoing threads under the RP Tracker listed on my navigation page. Please feel free to reference this at any time to see if I have your reply or have responded. I will be updating this periodically, so if I am missing a thread please inform me.
+ 
+<h2>Interactions.</h2>
+ 
+<b>✿</b> If we are mutuals, do the thing. Tag me in starters, send ask memes, do whatever. I may still respond if we are not mutuals, but I reserve the right to not.</p>
+ 
+<b>✿</b> You have express permission to do whatever you want to my muse, including <b>darker content</b>. However, keep in mind my muse will not go down quietly. Expect realistic reactions to whatever you do. </p>
+ 
+<b>✿</b> Muse does not equal Mun. If my muse does not like yours, don’t take it personally. </p>
+ 
+<b>✿</b> <b>FEEL FREE</b> <b>(</b> <i>plz do</i> <b>)</b> add other characters into our threads. Family, random merchant, other muses, I don’t care. Make it feel real, we’re telling a story. Stories tend to have more than two characters involved.</p>
+ 
+<b>✿</b> This blog is multiverse. Each verse will have a separate tag. </p>
+ 
+<b>✿</b> If there is not a verse for your fandom, and none of the existing ones work for you <b>(</b> <i>or you just want to</i> <b>)</b>, feel free to message me about it! I love creating new verses.</p>
+ 
+<b>✿</b> Feel free to mention my muse to other muses if we’ve interacted! I love things like that.
+ 
+<h2>Anonymous Asks.</h2>
+ 
+<b>✿</b> Send them<i>!</i> Do as you wish, send whatever you like, unless I specifically request otherwise in these rules.</p>
+ 
+<b>✿</b> Reference current rp events if you want<i>!</i> Ask questions, be the narrator to set up a situation for me. I love anons.
+ 
+<h2>Posts.</h2>
+ 
+<b>✿</b> I’m okay with seeing ooc posts, but the mun doesn’t like to see too many political posts. I understand that some people may feel strongly about a certain subject, but I would rather not see it. </p>
+ 
+<b>✿</b> Please tag your things appropriately and we won’t have many issues.
+ 
+<h2>NSFW.</h2>
+ 
+<b>✿</b> Although I’m 18+, I don’t feel comfortable doing smut with just anyone. This doesn’t mean I won’t do it, just shoot me a message first to make sure I’m okay with it.</p>
+ 
+<b>✿</b> Mun will <b>not</b> rp smut with those under the age of 18.</p>
+ 
+<b>✿</b> Do <b>NOT</b> send me explicit asks <b>(</b> <i>sexual in nature</i> <b>)</b> on anonymous. It is simply creepy. Cute romantic stuff is okay, but sexual asks are a big <b>no</b> unless I have a face to look at.
+ 
+<h2>Relationships.</h2>
+ 
+<b>✿</b> This blog's Main Ship is with <b><a href="https://vestigeofcalamity.tumblr.com/">vestigeofcalamity</a></b>. All interactions within the <b>Noragami</b> verse are set with this status by default. However, I am not ship <b>exclusive</b> with vestigeofcalamity. If you want to ship or otherwise have our interactions set in an altered verse, then simply message me! </p>
+ 
+<b>✿</b> I ship CHEMISTRY. Some ships will likely come easier than others. If you are interested in shipping with my muse, please let me know. Otherwise, I want the development to be as natural as possible. If it’s there, it’s there. </p>
+ 
+<b>✿</b> Same note–one sided feelings are completely okay. Your muse is entirely welcome to have their own feelings about mine, but my muse is not obligated to return them. Please keep this in mind.</p>
+ 
+<b>✿</b> This blog is multiship. I will consider single ship for each particular verse if my partner expresses interest in this. However, I cannot be exclusive as a whole, due to the nature of this blog as multi-verse. Please consult me if you are interested in this.</p>
+ 
+<b>✿</b> Polymarous relationships are <b>not</b> off limits, but if you’re interested in something like that, you will have to convince my muse in character.</p>
+ 
+<b>✿</b> Pre-established relationships are A-OK, just consult me beforehand. </p>
+ 
+<h2>Tagging.</h2>
+ 
+<b>✿</b> ;unrelated for anything that may not be related to my blog.</p>
+ 
+<b>✿</b> tw;trigger for any triggers<i>!</i> If I am not tagging a trigger of yours, please let me know<i>!</i></p>
+ 
+<b>✿</b> ;the writer has something to say | ooc ✿ for any out of character posts</p>
+ 
+<b>✿</b> ;psa for any important info.</p>
+ 
+<b>✿</b> I also have various tags for any characters I may like or interact with, so just look around for those.
+ 
+<h2>Social.</h2>
+ 
+<b>✿</b> Discord or Line is available for mutuals upon request.
+ 
+<h2>Have fun.</h2>
+ 
+<b>✿</b> The most important rule, make sure to have fun! Roleplaying is supposed to be fun, not something you dread. Just relax and enjoy yourself.
+ 
+</div>
+</div></div></div></div></div></div></div></div></div></div>
+ 
+<div id="03" class="popup_block">
+<div id="text">
+<img src="https://static.tumblr.com/j0nrc4i/uHFp4uxl4/about.png" draggable="false"></p>
+ 
+<h2>Profile.</h2></a>
+ 
+<b>Name:</b> Tо̄ Miya (杜 美夜)</br>
+ 
+<b>VA:</b> <a href="https://youtu.be/CsZCOT_eqdA?t=40">Nana Mizuki</a></br>
+ 
+<b>Nickname:</b> Christine; Chris; Mi-chan</br>
+ 
+<b>Hair Color: </b>Pink</br>
+ 
+<b>Eye Color:</b> Cyan</br>
+
+<b>Species:</b> Human? (Half-Human/Half-<a href="https://eraba-reta-unmei.tumblr.com/tagged/%3Babout%20the%20spirits">Spirit</a>)</p>
+
+<b>Ethnicity:</b> Asian <b>(</b> <i>Chinese</i> <b>)</b>; European <b>(</b> <i>Greek</i> <b>)</b></br>
+ 
+<b>Age:</b> Varies; 16-22 </br>
+ 
+<b>Height:</b> 5’7</br>
+ 
+<b>Sexuality:</b> Heterosexual, Demiromantic</br>
+ 
+<b>Birth date:</b> April 12th [Aries]</br>
+ 
+<h2>Personality.</h2>
+ 
+There are many words to describe her. You might call her compassionate and courageous; others may call her gullible and reckless. <b>Violent</b>--certainly at times. Far from perfect, easy to fluster, and yes, a social awkwardness that often makes simple conversation more challenging than it ought to be. </p>
+
+Then there's her tendency to push people away; it's hard to miss. One might stop and marvel at her hypocritical behavior. A yearning for social involvement, and yet a spit-fire personality that's hard to handle. An extraordinary habit of finding trouble where no trouble should be. Yet, she still prefers the ordinary and peaceful lifestyle. Whatever the case, it is evident that there is at least some guiding principle to her spontaneous and confusing behavior: <i>do what is right, and do what you must.</i></p>
+ 
+**Note: For related background info, please reference the verse page.</p>
+
+***Note: The spirits referenced on this blog are of my own creation. Information can be found <a href="https://eraba-reta-unmei.tumblr.com/tagged/%3Babout%20the%20spirits">here</a> and <a href="https://maledictus-maleficus.tumblr.com/tagged/%3Babout%20the%20spirits">here</a>.
+ 
+</div>
+</div></div></div></div></div></div></div></div></div></div>
+ 
+<div id="04" class="popup_block">
+<div id="text">
+ 
+<img src="https://static.tumblr.com/j0nrc4i/Nbjp4uy2b/verses.png"></p>
+ 
+<ul id="tabs">
+<li class="active">General.</li>
+<li>Modern.</li>
+<li>Crossover</li>
+</ul>
+<ul id="tab">
+<li class="active">
+ 
+<i>These verses are used for general purposes when no specific verse is available.</i>
+ 
+<div class="links_list">
+<p class="links_head">Modern Verse.</p>
+<div class="links_body">
+ 
+<b>tagged:</b> <a href="/tagged/verse;modern">verse;modern</a></p>
+ 
+This verse is set during modern times. In this verse, Miya is either a senior in high school, a college student, or a detective that also takes on freelance work on occasion. In all verses, she lives on her own. </p>
+ 
+</div></div>
+ 
+<div class="links_list">
+<p class="links_head">Urban Fantasy Verse.</p>
+<div class="links_body">
+ 
+<b>tagged:</b> <a href="/tagged/verse;urban%20fantasy">verse;urban fantasy</a></p>
+ 
+In this verse, her abilities are nearly identical to that of her Fate verse (please see the information on this verse for a list of abilities.) She has knowledge of the supernatural world and of magic. Any verse set in modern times but also has a fantasy twist to it will be set this in this verse by default unless requested otherwise.
+ 
+Just like her modern verse, in this verse she will be either a high school student, a college student, or a detective who accepts freelance work. If she is a detective, she primarily handles supernatural cases.
+</p>
+ 
+<h2>Background.</h2>
+ 
+<b>(</b> <i>under construction</i> <b>)</b></p>
+ 
+<h2>Abilities.</h2>
+ 
+<b>Sixth Sense</b> - In this verse, she has a broad understanding of magic and the supernatural. As such, she has a sixth sense. This allows her to both see and feel things normal humans usually cannot perceive. This power mostly stems from her interaction with the supernatural and her magic.</p>
+ 
+<b>Empath</b></p>
+ 
+Miya has the ability to tune in to the emotions of those around her,  even to the point of feeling them herself.  Often she does this unconsciously without thinking about it,  but she can choose to “zone in”  on someone particular. </p>
+ 
+The ability isn’t absolute and Miya often has a hard time “reading”  certain people until they’ve opened up to her a little. </p>
+ 
+ 
+<b>Spirit Magic.</b></p>
+To call Miya a 'magus' would not be innacurate but neither is it entirely accurate. Miya practices an art that has fallen largely out of practice, Spirit Magic.  Spirit Magic consists of two steps: <b>communion</b> and <b>manipulation.</b> This type of magic relies on communing with the spirits, asking for their aid, and then directing their powers via manipulation.  </p>
+ 
+Currently she has a connection to the spirits of fire, water, and wind. </p>
+ 
+<b>Child of the Spirits.</b></p>
+ 
+Miya has been blessed since birth with the innate ability to communicate with the elemental spirits around her as if she were talking to another human.  To do so is second nature to her as simple as walking. </p>
+ 
+<b>Fire Mana Manipulation.</b></p>
+ 
+Fire mana.  The source of life.  It what brings warmth to the world,  filling space with heat that can both caress and scorch.  The primary source?  The sun.  </p>
+ 
+Manipulating fire mana is to ask the fire spirits for aid.  The fire spirits are dense concentrations of mana,  discernible to only those that have been blessed by fire in some way.
+By manipulating fire mana you can cause the air to combust,  temperatures to raise,  even melt steel if given enough time and pressure.  But also,  it means the ability to take away fire mana;  to freeze water molecules in the air as the mana leaves the atmosphere.  It's as simple as asking the fire spirits to leave for awhile. </p>
+ 
+<b>Fire Mana Affinity </b></p>
+ 
+Miya was born with a unusually high affinity for fire mana manipulation.  The core of her own mana is unusually concentrated with fire mana,  leaving it difficult to control other attributes.  The has left her with the ability see fire spirits and commune with them,  often asking them for their aid.
+Unconsciously,  she pulls fire mana in from her surroundings when she has exhausted part of her reservoir.  Maybe the fire spirits themselves are just trying to help.  However, this can have a negative effect on her body in the long run if it exceeds her body’s ability to handle the stress.  It can begin with skin flaking,  then her complexion turning pale.  Eventually,  her body will break down completely and organs will cease to function.</p>
+ 
+<b>High Mana Capacity</b></p>
+ 
+Miya has a high capacity to house mana within her spiritual core.  More than the average human.  Typically,  a human body can only house so much mana before it begins to overflow and break down the body.  Miya’s storage capacity is higher,  meaning her body can handle more stress before breaking down. </p>
+ 
+</p>
+ 
+</div></div>
+ 
+</li>
+<li>
+ 
+<i>These verses all take part in an ordinary, modern setting.</i>
+ 
+<div class="links_list">
+<p class="links_head">Yakuza verse.</p>
+<div class="links_body">
+ 
+<b>tagged:</b> <a href="/tagged/verse;yakuza">verse;yakuza</a></p>
+ 
+This verse is also set during modern times, but is in Japan. Once again, she lives in a large city and is a third year in high school. However, this verse is very specific and cannot be changed at will. In this verse, she lives alone and supports herself, but her father is still very much involved in her life. Her father is a high ranking Yakuza, although she did not know of this until very recently. Despite her father being a Yakuza, she is neither for or against either side. <b>(</b> <i>Yakuza vs. Police</i> <b>)</b></p>
+ 
+</div></div>
+ 
+</li>
+<li>
+ 
+Specfic verses associated with fandoms. Reserved for interaction with characters from each fandom. Each crossover verse will have <i>mains</i> in order to preserve continuity. If you're interested in becoming a main shoot me a DM!
+ 
+<div class="links_list">
+<p class="links_head">Genshin Impact.</p>
+<div class="links_body">
+    
+<b>tagged:</b> <a href="/tagged/verse%3Bam-i-a-flower%3F-a-butterfly%3F-or-a-monster%3F%2Fgenshin-impact">verse;am I a flower? a butterfly? or a monster?/genshin impact</a></p>
+
+
+<a href="https://eraba-reta-unmei.tumblr.com/post/636542216128593920/for-what-reason-do-you-wield-a-blade-to-kill-to">For what reason do you wield a blade: To kill? To protect? Either way you must become a monster.</a></p>
+
+[Full Write Up Coming Soon! Feel free to look through the tag or inquire for more information]
+</div>
+
+<div class="links_list">
+<p class="links_head">Magi.</p>
+<div class="links_body">
+ 
+<i>This verse is the verse that this character was originally created in. The anime <b>Magi - The Labyrinth of Magic</b>.</i></p>
+ 
+<b>tagged:</b> <a href="/tagged/verse;magi">verse;magi</a></p>
+ 
+Chris <b>(</b> <i>Born Miya</i> <b>)</b> grew up in a small village on the edge of the Kou Empire when she was young. There, she lived peacefully with her mother and father until the age of ten. She was very close to her father, who was a sword master. She spent much of her time being trained by him, much to her father’s dismay, as he wished for her to live a peaceful life. After the death of the Emperor and his two eldest sons, her father was recalled to the palace. In the end, her mother never did tell her what his position in the Empire had been. Even without their father, she and her mother continued to live peacefully. Entranced by swordplay, Chris continued her training on her own. </p>
+ 
+<b>(</b> <i>Her father can be found <a href="https://inazuma-senko.tumblr.com/">here</a></i> <b>)</b></p>
+ 
+A few months passed, and there was still no word from or about her father, but she never gave up hope that she’d see him again. Unfortunately that was never to be fulfilled, as her village was razed and ransacked by an opposing country. Her village had been located on the outskirts of the Kou Empire’s land, and so it was the first to be hit by the unexpected invasion. Her mother died protecting her, and told her to never give up on finding her father. She then hid under her mothers body until the troops had completely left.</p>
+ 
+Even now she couldn’t say how long it was that she wandered. Only, by the time she reached another city she was already starved and dehydrated. Before leaving the remains of her home, she had only managed to salvage a small amount of supplies and the sword her father left to her. If it hadn’t been for a kind mercenary that happened upon her, she wouldn’t have survived.</p>
+ 
+After coming to consciousness she and the mercenary, whom she would learn the name of later to be Fahdira, a former military instructor from Parthevia. After Fahdira heard of her story, she quickly gathered that she really had no where else to go. Perhaps it was just pity, or maybe it was because she understood her position, but after a little thought she decided to take her in. It was around this time that Miya decided to change her name to Chris, hoping to somehow move on from her past life in Kou.</p>
+ 
+Fahdira and Chris traveled to many places together. Their travels led them to places ranging from the Reim Empire to Sindria. Fahdira became a mentor to Chris, and eventually an instructor as well. The mercenary taught the child all she knew about swordsmanship, and even reading and writing as well. (Though she had some difficulty learning Parthevia’s writing system.) Under her supervision, Chris’ skill grew immensely.</p>
+ 
+Before they knew it, six years had passed and Chris was now more than an adult. Though they were both sad to part, Fahdira realized that she herself was growing too old to travel. In the end, she chased Chris off, assuring herself that the girl had her own path to find. A path she wouldn’t be able to see while she was with her.</p>
+ 
+At eighteen years of age, she was a full fledged mercenary in many regards <s>though a bit gullible</s>. Her travels had taken her to a small, impoverished village in Parthevia, where she had eventually accepted a request to locate a missing person. While in the midst of her search, she was pulled into a dungeon. Asmodeus, to be specific. It is here she finally found the one she was looking for, but she had to somehow escape alive with him. It was more dangerous than she had ever imagined, but hard work and determination had led them to the treasure room with both of them still alive and breathing. She had attempted to refuse both the Djinn and the treasure, as she only wanted to live a semi ordinary life, but in the end she was forced to accept, the Djinn using her fathers sword as his vessel. Despite her claims about being poor, she instead shared most of the treasure with the village, breathing life into it once again.</p>
+ 
+<h2>Abilities.</h2>
+ 
+<b>Swordmanship.</b></p>
+ 
+Chris is very talented with a sword, more so than what people expect of her. As Style wise, her swordmanship relies on her speed and technique, as she lacks brute physical strength. She uses a lightweight rapier/saber <b>(</b> <i>depending on the verse</i> <b>)</b> that is easy to maneuver. What she lacks in strength, she makes up for in raw skill.</p>
+ 
+<b>Speed.</b>
+ 
+The level in which she has obtained has become nearly inhuman, and is by far her most noteworthy characteristic. This is due to her ability to channel her energy into her legs and arms, allowing for speeds unrecognizable by the average untrained eye. The downfall to this ability is that if used over long periods of time, it can have a negative effect on the muscles in her body. This results in extreme pain and potential long lasting injury if gone untreated.</p>
+ 
+<b>Djinn.</b>
+ 
+<b>Asmodeus</b> - A dragon like fire Djinn. This Djinn resides in the rapier she carries on her person at all times. It was obtained by accident when she was searching for someone who had gone missing in the vicinity of a dungeon. She was pulled into the dungeon, where she met said missing person, and proceeded to lead them to the treasure room. There, the Djinn Asmodeus chose her, much to her disagreement, as his king candidate. He states that although she did not wish for his power, fate had brought her to his dungeon, and as such calls her to take it. As a fire Djinn, Asmodeus is able to conjure crimson fire that is capable of burning through anything. In addition, these flames have a special purification property. He is the Djinn of <b>"</b>Hope and Loyalty.<b>"</b>
+ 
+<h2>Djinn Equip.</h2>
+ 
+<img src="https://78.media.tumblr.com/44b82755257696ed5aff5d8281ba2eb6/tumblr_inline_o01opu69oY1sbu3ux_500.jpg"></p>
+ 
+In this form, Chris takes up the appearance and abilities of Asmodeus, granting the ability to fly and access to stronger magic. Her sword transforms into a larger broadsword with the transformation, but she can alter it’s size as needed by increasing or lowering her flame output.</p>
+ 
+<b>Quantity of Magoi:</b> 4/5</br>
+<b>Fighting Ability:</b> 4/5</br>
+<b>Physical Strength:</b> 2/5</br>
+<b>Technique:</b> 5/5</br>
+<b>Leadership Ability:</b> 3/5</br>
+<b>Wisdom:</b> 3/5</p>
+ 
+    <b>Asmoday Hariq</b> - Mid Level Heat magic. This spell sends a wave of fire hurling at her enemies. This spell is most effective at a mid distance. <b>(</b> <i>Lit. Wrath of Flames</i> <b>)</b>.</p>
+ 
+   <b>Asmoday Koltuhir Alhab</b> - Extreme Magic. This is the most powerful spell she is granted access to by Asmodeus powers. This is a close range level spell, that sends an extremely powerful vortex of fire around her, destroying and/or purifying everything in the vicinity. The radius of effect is dependent on the users will and the magoi she has left. She has a hard time controlling this extreme magic due to it’s wild and volatile nature. <b>(</b> <i>Lit. Wrath of the Demon’s Cleansing Flame!</i> <b>)</b>.
+ 
+</div></div>
+ 
+<div class="links_list">
+<p class="links_head">Fairy Tail.</p>
+<div class="links_body">
+ 
+ <i>This verse takes place in the world of Fairy Tail</i>. She is a freelance mage for hire, unaffiliated with any particular guild at the moment. She uses a combination of sword and fire magic to overwhelm her enemies with speed and precision.</p>
+ 
+ <b>tagged:</b> <a href="/tagged/verse;fairy%20tail">verse;fairy tail</a>
+ 
+<h2>Abilities.</h2>
+ 
+<b>Speed</b> - Her strongest asset is probably her speed. Even without the aid of her augmentation magic, she is still very quick on her feet and difficult to catch.</p>
+ 
+<b>Swordsmanship:</b> Her skill with her blade, nicknamed Flamberge after a legendary sword which has control over fire, is rather high. Her swordsmanship style focuses on technique and speed rather than strength to overwhelm her enemies before they can even retaliate. Her biggest drawback, however, is that the defense in this style is rather weak.</p>
+ 
+<b>Magic:</b> The magic she uses is mainly based around two principles, augmenting her body, and extending the attack power behind her attacks. As such, she possesses two types of magic.</p>
+ 
+        <b>Augmentation Magic</b> - This magic is used to augment the abilities of her own body. It revolves around strengthening the muscles in the various areas around her body, such as her legs for speed and strength, or her arms for strength. However, overuse may result in muscle burnout, which causes the flesh on the limb to turn bloodshot red and become unsaleable for some time. It is only used when absolutely necessary.</p>
+ 
+        <b>Fire Magic</b> - She can use fire magic to some degree using her sword Flamberge. When separated from the sword, she only has a very small control over the element. However, when it is unsheathed the effects are easily tripled in strength. This magic has multiple uses associated with the manipulation of flames. In addition, while having Flamberge in her hand she possesses a degree of fire resistance. However, the reasoning behind her swords abilities are not because it is a magic item, per say. It mimics it, however …</p>
+ 
+<b>Cursed Blade:</b> Asmodeus -The truth of the matter is that there is a demon housed inside the blade Flamberge. It’s true name is Asmodeus. Chris discovered this at some point when the demon inside nearly took over her body. Asmodeus’ curse involves invoking crimson flames with a pitch black tint. These flames are capable of burning through just about anything, and will not cease to burn until given the order to. At the moment, Asmodeus and her seem to have a good relationship. This grants her several abilities that can be used when needed.</p>
+ 
+         <b>Demon possession</b>, partial - By allowing Asmodeus to take over her body to an extent, she is granted access to his reservoir of curse power. Asmodeus’ power over flames is manifested in her fire magic, now taken form as a curse instead. They are much stronger than normal flames. In addition, her physical capabilities also increase far beyond what a normal human should be capable of. The seal on Asmodeus can be loosened to various degrees to allow for more power, however more power comes with more of a risk. Although they are on good terms, should her heart waver, there runs a risk of him fully possessing her body, effectively turning her into a demon for the duration. </p>
+ 
+</p>
+ 
+</div></div>
+ 
+<div class="links_list">
+<p class="links_head">Seraph of the End.</p>
+<div class="links_body">
+ 
+<i>As the name implies this verse takes place in the universe of Seraph of the End</i>. As such, there are many differences to her background and abilities.</p>
+ 
+<b>tagged:</b> <a href="/tagged/verse;the%20end">verse;the end</a></p>
+ 
+<h2>Background.</h2>
+ 
+When the calamity that nearly wiped out the entire human population occurred, she like many others were left orphaned. The difference–she was taken in by a vampire noble and raised outside of vampire society. Her foster father was one of the few that hadn’t integrated into vampire society. They lived far away from both human and vampire society, until one day she was separated from him during an attack on their small home. She’s been on her own since then. It was shortly after that she was able to contract with the demon Asmodeus when she more or less accidentally summoned him using an old book she had found.</p>
+ 
+Currently, she has yet to really integrate into human society, finding it a rather difficult process for her. So, she lives outside the normal borders as a mercenary of sorts, trying to find out what happened to her foster father. Her kind heart often gets her into more trouble than she bargains for.</p>
+ 
+<h2>Abilities.</h2>
+ 
+<b>Demon</b> - Asmodeus. Amodeus is almost completely unsealed due to making this contract on her own, without the help of the moon demon company. As such, he is very difficult to control. Because of this, she normally chooses to instead use the second ability she gained from this contract. He is a possession type demon, but has been known to be able to manifest various effects due to his strength. Currently resides in her sword.</p>
+ 
+<b>Magic</b> - She has a well off understanding of magic and it’s different forms, able to employ mainly simple and non dangerous spells for everyday use. Ex. Wards, making objects float. However, she does possess knowledge of a more advanced type of magic.</p>
+ 
+      <b>Blood Magic</b> - This is a type of magic that involves using ones blood as a catalyst to cast magic. This is normally achieved by spelling out various chants in the air, normally taking form in a type of poem related to the nature of the spell. This magic has various uses. ex. Conjuring flames, levitating things. The higher tier spell, the more blood is required as its cost.]. </p>
+ 
+</p>
+ 
+</div></div>
+ 
+<div class="links_list">
+<p class="links_head">Age of Dragons.</p>
+<div class="links_body">
+ 
+<b>tagged:</b> <a href="/tagged/verse;age%20of%20dragons">verse;age of dragons</a>
+ 
+<h2>Background.</h2>
+ 
+Chris grew up in the Free Marches as a normal girl with her father and mother. Her mother had been a warrior, and her father was an apostate in hiding. The pinkette, she was born with a very weak constitution, and the doctors didn’t give her very long to live. But, she survived through her father’s healing magics. Eventually, the illness progressed. In a desperate attempt to save her, he father summoned a benevolent spirit of compassion from the fade. In exchange for the girl becoming it’s vessel, it would heal her of her illness and protect her. The result left her with a very unusual hair color.</p>
+ 
+It was not long after that that the Templar’s came.They took her father, and she and her mother were left alone. For the majority of her childhood, she grew up strong and healthy–the spirit never manifesting itself. An incident with a group of thieves during her adolescence sparked its appearance to protect her and her mother. The Templar’s came for her as well, believing her to be a mage who had contacted a demon of some sort. She of course, had no magical ability past what the spirit offered her.</p>
+ 
+With the help of her mother, she managed to escape to Ferelden, where she traveled around, working as a mercenary and trying to avoid the eyes of any Templar’s. <b>That’s when the Blight came</b>.</p>
+ 
+<h2>Abilities.</h2>
+ 
+She is a warrior, having trained with her mother through most of her childhood and into her adolescence. After she left to escape to Ferelden, she continued her training through first hand experience. Some say she may have benefited more as a rouge due to her high speed and dexterity, but she likes to think she’s unique that way.</p>
+ 
+She wields one sword in her right hand, and chooses not to wear a shield as it slows her down, and prefers to wear light armor. Primarily her skills focus on dealing damage to large groups of enemies and overwhelming them with damage and precision. </p>
+ 
+          <b>Spirit Warrior (</b> <i>technically</i> <b>)</b> - Although spirit warriors employ magical abilities, they are not mages; instead, they flirt with inhabitants of the Fade who agree to augment mortal abilities in exchange for a glimpse of the physical world. Naturally, <b>the Chantry’s templars rarely acknowledge that distinction</b>. </p>
+ 
+This ability was gained through the Spirit <b>Compassion</b> which resides in her body, granting her access to a various skillset of abilities that augment her natural abilities and in a pinch, allow her to escape from danger. While in this mode, her iris’ glow a bright whitish blue. Once the effect wears off however, it leaves her and the spirit weak, making her more susceptible to enemy attack.</p>
+ 
+</div></div>
+ 
+ 
+<div class="links_list">
+<p class="links_head">Type Moon Fate/Servant.</p>
+<div class="links_body">
+ 
+<b>tagged:</b> <a href="/tagged/verse;a king forgotten by time/but never by fate">verse;a king forgotten by time/but never by fate</a>
+ 
+<h2><i><b>New Verse;&nbsp; Servant - Class Saber</b></i></h2><figure data-orig-width="1800" data-orig-height="1700" class="tmblr-full"><img src="https://66.media.tumblr.com/1329766189544e5b3f5022dfe24145e7/629c9a488b68b498-02/s540x810/d24b9b914b4a32adfde619683b8107a2661e922b.png" alt="image" data-orig-width="1800" data-orig-height="1700"></figure><h2><i>”She who was chosen by <b>fate </b>but dared to defy it.”</i></h2><p>&nbsp; &nbsp; <i>A small kingdom torn asunder by war.&nbsp; An even smaller village set <b>ablaze </b>by the hatred of men.&nbsp; It was here that her story began.&nbsp; A young girl who struggled,&nbsp; who <b>clawed </b>her way to survival.&nbsp; It started as a small wish,&nbsp;&nbsp;‘to ensure that no one else suffer the same tragedy’,&nbsp; but <b>fate </b>had larger plans.&nbsp; And so that wish grew,&nbsp; and so did the girl,&nbsp; until the girl faded away into a woman--a woman into a <b>warrior</b>&nbsp;(whose heart still yet beat in all the girlish aspirations of a child searching for the light.)&nbsp; And a warrior into a destined <b>king.</b></i></p><p><i><b>&nbsp; &nbsp; &nbsp; ... And yet,&nbsp; when all was said and done she gave away her crown.&nbsp; To be forgotten by history.</b></i></p><h2><i><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Why?</b></i></h2><p><i><b>Name: ???</b></i></p><p><i><b>Class:&nbsp; Saber</b></i></p><p><i><b>Rank:&nbsp; 4*</b></i></p><p><i><b>&nbsp; &nbsp; &nbsp; &nbsp; Strength: C<br> &nbsp; &nbsp; &nbsp; &nbsp; Agility: A+<br> &nbsp; &nbsp; &nbsp; &nbsp; Endurance: C<br> &nbsp; &nbsp; &nbsp; &nbsp; Mana: B<br> &nbsp; &nbsp; &nbsp; &nbsp; Luck: B<br> &nbsp; &nbsp; &nbsp; &nbsp; Noble Phantasm:&nbsp; ??</b></i></p><blockquote><p><i><b>&nbsp; &nbsp; </b>The ancestor and past life of the Master Miya Tou,&nbsp; manifested by tracing back Miya’s spirit core to create the Saint Graph of a king forgotten by time.</i></p></blockquote>
+ 
+</div></div>
+ 
+<div class="links_list">
+<p class="links_head">Type Moon Fate/Grand Order.</p>
+<div class="links_body">
+ 
+<b>tagged:</b> <a href="/tagged/verse%3Bgrand-order">verse;grand order</a>
+<h2>Background.</h2>
+ 
+Born To Miya (杜 美夜)  the daughter of a well respected magus family. The To family was an old Chinese magus family spanning centuries of generations. However, despite their age and relative wealth, they had struggled to produce magi of any particular talent. At some point or another, the family entered into a dealing with an ancient entity: Yanluo Wang. </p>
+
+Yanluo Wang gave each of the To family's decendents the "gift" of sight. Each ability would manifest differently depending on the desires of the decendent. But all gifts inevitably came with a cost. </p>
+
+As for her maternal heritage, Miya is hesitant to speak much of it. From her perspective there was simply little need to. There were entities known as "spirits" that existed in this world. Beings of nature compromised wholly of mana. And  while most of them chose to ignore humankind, some could take human form. That's what her mother was: a spirit in a human shell, who had assumed the identity of a magus child to be with a human she loved. </p>
+ 
+The family soon came to Japan after a falling out with her father's family. This is where Miya was eventually born. Their family lived in relative peace for a number of years until a tragedy befell them. </p>
+ 
+One night, a young Miya stumbled across a corpse. The corpse of her mother, and a looming figure over her. She screamed, she ran, until she found her father. Miya does not remember what happened after that, but the estate had somehow burst into flames. Just like that, it was all over.</p>
+ 
+After the death of her mother, Miya fell into a state of unrest. Nothing her father could do could make her forget what had happened. The parent and child inevitably grew apart. It was around this time that Miya was scouted for the Grand Order, coming to Chaldea among many different mages who were all after something different. For her-maybe it was a means of escape more than anything. She couldn't have predicted how disasterous things would become so quickly.</p>
+ 
+During the catastrophe that befell Chaldea during the initial stages of the Grand Order, Miya fell into a coma along with many of the other mages--sleeping until eventually, she was woken up with few others. She currently acts mainly as a support for the Servants and their Master.</p>
+ 
+Although, perhaps that may change in the future. </p>
+ 
+<h2>Abilities.</h2>
+ 
+<b>Empath</b></p>
+ 
+Miya has the ability to tune in to the emotions of those around her,  even to the point of feeling them herself.  Often she does this unconsciously without thinking about it,  but she can choose to “zone in”  on someone particular. </p>
+ 
+The ability isn’t absolute and Miya often has a hard time “reading”  certain people until they’ve opened up to her a little. </p>
+ 
+<b>Enhanced Strength</b></p>
+ 
+Miya's physical strength has been described as <i>Heruclean</i> or <i>Amazonian</i> in likeness.  In all actuality, her muscle mass isn't far above the normal human's.  Miya theorizes that the source of her strength comes from the large quantity of condensed fire mana in her body due to the blessings of the spirits, though she isn't entirely sure.  Perhaps it runs in her bloodline.</p>
+ 
+ 
+<b>Spirit Magic.</b></p>
+To call Miya a 'magus' would not be innacurate but neither is it entirely accurate. Miya practices an art that has fallen largely out of practice, Spirit Magic.  Spirit Magic consists of two steps: <b>communion</b> and <b>manipulation.</b> This type of magic relies on communing with the spirits, asking for their aid, and then directing their powers via manipulation.  </p>
+ 
+Currently she has a connection to the spirits of fire, water, and wind. </p>
+ 
+<b>Child of the Spirits.</b></p>
+ 
+Miya has been blessed since birth with the innate ability to communicate with the elemental spirits around her as if she were talking to another human.  To do so is second nature to her as simple as breathing. </p>
+ 
+<b>Fire Mana Manipulation.</b></p>
+ 
+Fire mana.  The source of life.  It what brings warmth to the world,  filling space with heat that can both caress and scorch.  The primary source?  The sun.  </p>
+ 
+Manipulating fire mana is to ask the fire spirits for aid.  The fire spirits are dense concentrations of mana,  discernible to only those that have been blessed by fire in some way.
+By manipulating fire mana you can cause the air to combust,  temperatures to raise,  even melt steel if given enough time and pressure.  But also,  it means the ability to take away fire mana;  to freeze water molecules in the air as the mana leaves the atmosphere.  It's as simple as asking the fire spirits to leave for awhile. </p>
+ 
+<b>Fire Mana Affinity </b></p>
+ 
+Miya was born with a unusually high affinity for fire mana manipulation.  The core of her own mana is unusually concentrated with fire mana,  leaving it difficult to control other attributes.  The has left her with the ability see fire spirits and commune with them,  often asking them for their aid.
+Unconsciously,  she pulls fire mana in from her surroundings when she has exhausted part of her reservoir.  Maybe the fire spirits themselves are just trying to help.  However, this can have a negative effect on her body in the long run if it exceeds her body’s ability to handle the stress.  It can begin with skin flaking,  then her complexion turning pale.  Eventually,  her body will break down completely and organs will cease to function.</p>
+ 
+<b>High Mana Capacity</b></p>
+ 
+Miya has a high capacity to house mana within her spiritual core.  More than the average human.  Typically,  a human body can only house so much mana before it begins to overflow and break down the body.  Miya’s storage capacity is higher,  meaning her body can handle more stress before breaking down. </p>
+ 
+<b>Songcraft.</b></p>
+ 
+Songcraft is magic, but is not the same as magecraft. While magecraft is the process of creating what is possible through science through miracles, songcraft is the ability to create what should not ordinarily possible. This is done with the help of the Spirits. </p>
+ 
+The primary difference between magecraft and songcraft is the source of energy used. While magecraft makes use of the caster's mana, songcraft draws its power from the world and the emotions of living beings. That is, its powers and abilities are solely dependent on these factors. The more powerful the emotions, the more energy that is gathered. Theoretically, one would be able to gather an infinite amount of energy through this method. </p>
+ 
+Songcraft is, however, not without its limitations. It is not omnipotent or very reliable in actual combat. As the name implies, songcraft requires the use of song to convey with the world and alter reality. A song has two primary functions: (1) to convey the caster's intentions and (2) to gather the requisite energy to alter reality. If neither part is sufficiently met, the song magic will ultimately fail or otherwise have its effects diminished or completely altered. A caster could create a song that would bring about the destruction of the world, but the amount of energy required for that endeavor would be nearly impossible to accomplish without extreme measures. Not everyone is capable of using songcraft, either. To begin with, the caster must have the necessary qualities to commune with the world. The world will not listen to one who is unable to listen in turn.</p>
+ 
+<b>Crafting Song Magic.</b> The process of crafting song magic is surprisingly simple. It can be done in two ways. The first method involves the caster diving into ones inner most world through meditation or some other means. During this process, the caster will visualize what it is they are trying to accomplish. The key component in this process is imagination and imagery. The more detailed the imagery and visualiztion, the more likely the song is to succeed. Once the visualization has been completed, the caster must weave these intentions into a song. It is not as complicated as it sounds. Unlike the usual composition of music, the caster must focus solely on the emotions they wish to convey. The rest will be automatically set during the actual casting process. </p>
+ 
+The second method for crafting song magic is through artificial means. Everything has a forumula. Understanding the principles of songcraft can allow a person who would ordinarily be incapable of casting it to create song magic for the use of others. This process is much more complicated and based in science, but in many ways it is much more efficient. It allows for the casting of complex songcraft without the complex visualization. The challenge lies in resonance. Casting song magic that does not originate from the intended caster requires a degree of resonance with the emotions of the caster. Much of the time spent in this process will be in fine tuning to the caster and ensuring a proper casting. In short, crafting song magic through this method takes much longer.
+ 
+</div></div>
+ 
+ 
+<div class="links_list">
+<p class="links_head">Noragami.</p>
+<div class="links_body">
+ 
+<!--content starts here-->
+<b>tagged:</b> <a href="/tagged/verse;stray%20blossom">verse;stray blossom</a>
+<br><br><b>✿</b> This blog's Main Ship is with <b><a href="https://vestigeofcalamity.tumblr.com/">vestigeofcalamity</a></b>. All interactions within the <b>Noragami</b> verse are set with this status by default. However, I am not ship <b>exclusive</b> with vestigeofcalamity. If you want to ship or otherwise have our interactions set in an altered verse, then simply message me! <br>
+<h2>Background.</h2>
+ 
+<i>To Miya </i>(杜 美夜) had always noticed things that could not be explained by modern logic. The looming shadows that appeared behind people right before a terrible accident, the way the wind seemed to whisper warnings in her ear--most of all, the people that just didn't seem.. normal. An entirely different world; one she shouldn't have been able to see, but could.<br><br>
+ 
+Miya grew up trying to ignore these things. She saw the worried looks her parents gave each other when she mentioned these odd things. They were the same looks that everyone gave her. If she mentioned them to the teacher or other adults, they would get annoyed. If she mentioned it to the other children, she would be made fun of. So, she learned to ignore them. Ignoring them meant the odd creatures and people would leave her alone. Ignoring them meant she could live an ordinary life. <br><br>
+ 
+At least, that's what she thought.<br><br>
+ 
+One night, she ignored something she shouldn't have.<br><br>
+ 
+...<br><br>
+ 
+Her mother died that night from "unknown causes"--her father survived, but was left in a coma for a number of years. Amidst all this, the young girl was tossed around from home to home. Even when she tried to act normal, a star of misfortune always seemed to follow her. Accidents, poor finances--each family she lived with always suffered. Even when her father woke up, she chose not to live with him out of fear for his life.<br><br>
+ 
+Miya had enough of it all. She didn't want anyone else to get hurt, so she learned all she could about the supernatural and the mysterious world around her. She learned about different methods of warding off evil, about which creatures were friendly and could be asked for help, or which needed to be coaxed through other means.<br><br>
+ 
+In short, she became a <b>witch.</b>
+ 
+<h2>Abilities:</h2>
+ 
+<b>Sixth Sense:</b> Having this ability since birth, Miya has always been able to perceive what normally cannot be perceived: the far shore. She can interact with the various creatures and residents, to both good and bad fortune.<br><br>
+ 
+ 
+ 
+<b>Scent:</b> More of a trait--creatures of the far shore are naturally attracted to her. She's been told by the more friendly creatures that she gives off the very pleasant scent of roses and vanilla. However, this trait be suppressed with a charm. As long as the creature does not realize Miya can see them, then she will be no different from a normal human to them.<br><br>
+ 
+<b>Familiar:</b> Miya is able to take creatures of the far shore and make them her familiar by making a covenant with them. The exact cost of the contract are dependent upon the creature. Almost all require a cost for their services, but can be forcefully bound. Forcefully binding a creature is dangerous. Failure will almost always result in being attacked by the creature, which could lead to death.<br><br>
+ 
+Either way, the method always requires the creature to be given a name. Youkai in particular can be bound in this manner by learning their true name.<br><br>
+<blockquote>
+              <b>Hellcat, Aki:</b> A cat spirit bound to Miya. She found this small wandering spirit in a park. After accidentally locking eyes with him, he began following her around. After several attempts of getting him to leave, Miya gave up, and named him Aki, meaning bright. Their contract requires Miya to give him adequate food and shelter. <br><br>
+ 
+He normally takes the form of a small white cat with flames around his feet. Rather than walk, he usually floats around his master. However, he does have a much larger and monstrous form which he rarely takes.<br><br> </blockquote>
+ 
+<b>Charms: [Coming soon] </b><br><br>
+ 
+<i>[More to come! If you have any suggestions, let me know.] </i> <br><br>
+ 
+<hr>
+ 
+<i>Verses below are AU’s created with <b>vestigeofcalamity</b>. Interaction is open, but must be requested. For further information, please read our threads under the appropriate tag.</i></p>
+ 
+                <b>Delusions verse:</b> Chris is 26 and working as a lawyer for a large law firm in the city. She is currently engaged to ancientcalamity’s Yato. <i><a href="/tagged/verse;delusions">verse;delusions</a></i></p>
+ 
+                <b>No Escape:</b> This verse makes use of ancientcalamity’s Yandere verse.  She is currently 19, and the object of his obsession. They are officially “together” at this time. <i><a href="/tagged/verse;no-escape">verse;no escape</a></i></p>
+ 
+<!--content ends here-->
+ 
+</div></div> </p>
+ 
+</li>
+</ul>
+ 
+</div>
+</div></div></div></div></div></div></div></div></div></div>
+ 
+<div id="05" class="popup_block">
+<div id="text">
+ 
+<img src="https://static.tumblr.com/j0nrc4i/xJgp4uyae/navi.png" draggable="false"></p>
+ 
+<h3>The Blossom.</h3>
+ 
+<a href="https://eraba-reta-unmei.tumblr.com/tagged/%3Bwhat%20do%20you%20see%20when%20you%20gaze%20in%20the%20mirror%3F%20%7C%20visage%20%E2%9D%80." class="button">Visage.</a>
+<a href="https://eraba-reta-unmei.tumblr.com/tagged/%3Bbloom%20beautifully.%20%C2%A0flower%20of%20mine%20%7C%20voice%20%E2%9D%80" class="button">Voice.</a>
+<a href="https://eraba-reta-unmei.tumblr.com/tagged/%3Beven%20blossoms%20have%20their%20thorns%20%7C%20about%20%E2%9D%80" class="button">About.</a>
+</p>
+ 
+<h3>Roleplay.</h3>
+ 
+<a href="https://www.rpthreadtracker.com/public/ever12/blossoming-threads" class="button">Thread Tracker.</a>
+<a href="https://eraba-reta-unmei.tumblr.com/tagged/%3Bfate%20recorder%20%7C%20ask%20memes%C2%A0%E2%9D%80" class="button">Ask Memes.</a>
+<a href="https://eraba-reta-unmei.tumblr.com/tagged/%3Bin-my-field-of-paper-flowers-%7C-wishlist-%E2%9D%80" class="button">Wishlist.</a>
+</p>
+ 
+<h3>Fate Recorder.</h3>
+ 
+<a href="/tagged/;residents" class="button" title="Hover here">Side Muses.</a>
+<a href="/" class="button">Title Here.</a>
+<a href="/" class="button">Title Here.</a>
+ 
+</div>
+</div></div></div></div></div></div></div></div></div></div>
+ 
+<div id="06" class="popup_block">
+<div id="text">
+ 
+<img src="https://static.tumblr.com/j0nrc4i/1ZFp4uyf6/mun.png" draggable="false"></p>
+ 
+<a href="#mun" class="button">About Mun.</a>
+ 
+<a name="mun"><h3>About Mun.</h3></a><p>
+ 
+<img src="https://78.media.tumblr.com/b3b0d6ec8a0e3d7b03c6b43e35622a41/tumblr_inline_p3hw4dqYqY1sbu3ux_500.jpg"></p>
+ 
+<b>Name:</b> Everi</br>
+<b>Age:</b> 23</p>
+I’m just your average bachelorette in law school, nothing much else to say<i>!</i> Just a big nerd looking to make friends and have a good time.</p>
+ 
+Let’s just all try to have fun together, alright<i>?</i>
+ 
+</div>
+</div></div></div></div></div></div></div></div></div></div>
+ 
+<div id="07" class="popup_block">
+<div id="text">
+ 
+<img src="https://static.tumblr.com/j0nrc4i/Nbjp4uy2b/verses.png"></p>
+ 
+<ul id="tabs">
+<li class="active">Fate.</li>
+<li>Modern.</li>
+<li>Etc.</li>
+</ul>
+<ul id="tab">
+<li class="active">
+ 
+
+<!--content starts here-->
+ 
+</p>
+ 
+<div class="links_list">
+<p class="links_head">Ozymandias.</p>
+<div class="links_body">
+ 
+<a href="https://ardenssolis.tumblr.com"><img src="https://66.media.tumblr.com/ce043a7ea963d657ac45d83b1678e95f/6009186a9ecede85-1c/s100x200/37daed69cd6b3b3749a487227f3a63330b777f22.png" align="right" style="height:85px;width:85px;padding-right:5px;padding-bottom:0px;"></a>
+</p>
+ 
+[Bully/Local Man with a God Complex/Definitely NOT Attractive]<br>
+Miya and Ozymandias have one problem: they are both way too alike.  They're both stubborn and prideful to a fault.  Worst of all, Ozymandias is a total bully towards her!  How dare he say she'd be a terrible wife.<br><br>
+ 
+Despite this, Miya doesn't hate him.  She holds affection towards him and his stubborn ways, but good luck getting her to ever admit to it.  She <i>still</i> thinks he's an egotistical jerk.<br><br>
+ 
+Bond Level: ✿✿✿✿✿
+ 
+ 
+
+</div></div> </p>
+ 
+ 
+</li>
+<li>
+ 
+<div class="links_list">
+<p class="links_head">Lucky.</p>
+<div class="links_body">
+ 
+<a href="https://rakkirrrowch.tumblr.com"><img src="https://66.media.tumblr.com/b4ee2519d716a1c468c319436cf335e9/749d179b6d05c7d1-75/s540x810/7a1318100eb2149a7b40f7ed533834167e45cd3d.png" align="right" style="height:85px;width:85px;padding-right:5px;padding-bottom:0px;"></a>
+</p>
+ 
+[Boyfriend/Local Accident Waiting to Happen]<br>
+Lucky walked into her life one day and now she can't imagine living without him. Hyperactive and loving, Lucky gave Miya the one thing she had been missing out on in life: someone who cares.  Platonic love became something more romantic, and then one day in spring they decided to officially get together.<br><br>
+ 
+Miya doesn't understand him all the time, and at times his affection can be overbearing.  She worries about him constantly due to his inclination towards accidents, but he has become someone truly irreplacable in her life all the same. She couldn't imagine anyone else she'd rather spend her life with.<br><br>
+ 
+Bond Level: ✿✿✿✿✿✿✿✿
+ 
+</div></div> </p>
+ 
+</li>
+<li>
+ 
+<div class="links_list">
+<p class="links_head">Salem.</p>
+<div class="links_body">
+ 
+<a href="https://salemshooter.tumblr.com"><img src="https://66.media.tumblr.com/8a1bff8bf8692a50cab3542eb623c726/212cc2a131092be0-23/s540x810/583f9407bf1be754fc3b3875da2bc99555a2608b.png" align="right" style="height:85px;width:85px;padding-right:5px;padding-bottom:0px;"></a>
+</p>
+ 
+[Partner/Local Menace]<br>
+Salem was the first digimon Miya chose to be her partner.  And consequently, the <i>only</i> partner.  Sometimes Miya can't get a good read on him.  He pretends to not care but gets jealous at the slightest sign of her showing affection to another.  Despite this, Miya cares for the little imp like she would some delinquent child of hers.  She'll always be there for him, even if he eats all her food. <br><br>
+ 
+Bond Level: ✿✿✿✿✿✿
+ 
+</div></div> </p>
+ 
+
+</div>
+</div></div></div></div></div></div></div></div></div></div>
+ 
+ 
+ 
+ 
+<div id="cr" class="popup_block">
+<div id="text">
+<h3>Credits.</h3>
+Theme code <i>&</i> graphics by <b>Storyteller Creations</b>. If you are interested in ordering a theme from me, please visit my commissions blog <b><a href="https://storytellercreations.tumblr.com">storytellercreations</a></b>. Thank you for your interest and hope to see you soon as a client<i>!</i></p>
+ 
+<b>✿</b> Theme background artwork by <b><a href="https://www.pixiv.net/member.php?id=4579881">Sapp</a></b>.</p>
+ 
+<b>✿</b> Popup artwork by <b><a href="https://www.pixiv.net/member.php?id=8601">Ameiro</a></b>.</p>
+ 
+<b>✿</b> Favicon from <b><a href="https://pixels--galore.tumblr.com/favicons">here</a></b></p>
+ 
+This theme is authorized only for <b>Everi</b>'s use. <i>Please do not steal or directly copy the code for yourself</i>.
+</div></div></div></div></div></div></div></div></div></div>
+ 
+</html>
